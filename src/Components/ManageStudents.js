@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { updateStudent } from '../reducers/students';
 
 import EnrolledStudents from './EnrolledStudents';
-import ManageStudents_Create from './ManageStudents_Create';
+import CreateStudentWithSchool from './CreateStudentWithSchool';
 
 
 
@@ -70,7 +70,7 @@ class ManageStudents extends Component {
 
         </div>
 
-        <ManageStudents_Create schoolId={schoolId} schoolName={schoolName} />
+        <CreateStudentWithSchool schoolId={schoolId} schoolName={schoolName} />
 
     </div>
 

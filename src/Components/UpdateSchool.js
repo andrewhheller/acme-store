@@ -82,25 +82,56 @@ class UpdateSchool extends Component {
 
               <label>Name:<span className="required-field"> * required</span></label>
               <br />
-              <input id="field1" className="input-field" name="name" type="text" value={name} onChange={handleChange} />
+              <input
+                required
+                id="field1"
+                className="input-field"
+                name="name"
+                type="text"
+                value={name}
+                onChange={handleChange}
+              />
               <br />
               <br />
 
               <label>Description:</label>
               <br />
-              <textarea id="field2" className="input-field description-field" name="description" type="text" value={description} onChange={handleChange}></textarea>
+              <textarea
+                id="field2"
+                className="input-field description-field"
+                name="description"
+                type="text"
+                value={description}
+                onChange={handleChange}
+              ></textarea>
 
               <h3>Address</h3>
 
               <label>Street:<span className="required-field"> * required</span></label>
               <br />
-              <input id="field3" className="input-field" name="street" type="text" value={street} onChange={handleChange} />
+              <input
+                required
+                id="field3"
+                className="input-field"
+                name="street"
+                type="text"
+                value={street}
+                onChange={handleChange}
+              />
               <br />
               <br />
 
               <label>City:<span className="required-field"> * required</span></label>
               <br />
-              <input id="field4" className="input-field" name="city" type="text" value={city} onChange={handleChange} />
+              <input
+                required
+                id="field4"
+                className="input-field"
+                name="city"
+                type="text"
+                value={city}
+                onChange={handleChange}
+              />
               <br />
               <br />
 
@@ -119,12 +150,27 @@ class UpdateSchool extends Component {
 
               <label>Zip:<span className="required-field"> * required</span></label>
               <br />
-              <input id="field5" className="input-field" name="zip" type="text" value={zip} onChange={handleChange} minLength="5" required />
+              <input
+                required
+                id="field5"
+                className="input-field"
+                name="zip"
+                type="text"
+                value={zip}
+                onChange={handleChange}
+                minLength="5"
+              />
               <br />
               <br />
 
               <button className="create-form-btn" type="submit">Save</button>
-              <button className="delete-form-btn" type="button" onClick={() => onDeleteSchool(school)}>Delete</button>
+              <button
+                className="delete-form-btn"
+                type="button"
+                onClick={() => onDeleteSchool(school)}
+              >
+                Delete
+              </button>
             </form>
           </div>
 

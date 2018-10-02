@@ -29578,82 +29578,129 @@ module.exports = function(originalModule) {
 /*!*******************************!*\
   !*** ./src/Components/App.js ***!
   \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store */ "./src/store.js");
-/* harmony import */ var _reducers_schools__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/schools */ "./src/reducers/schools.js");
-/* harmony import */ var _reducers_students__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
-/* harmony import */ var _Schools__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Schools */ "./src/Components/Schools.js");
-/* harmony import */ var _CreateSchool__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CreateSchool */ "./src/Components/CreateSchool.js");
-/* harmony import */ var _UpdateSchool__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./UpdateSchool */ "./src/Components/UpdateSchool.js");
-/* harmony import */ var _Students__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Students */ "./src/Components/Students.js");
-/* harmony import */ var _CreateStudent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CreateStudent */ "./src/Components/CreateStudent.js");
-/* harmony import */ var _UpdateStudent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./UpdateStudent */ "./src/Components/UpdateStudent.js");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Header */ "./src/Components/Header.js");
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Nav */ "./src/Components/Nav.js");
-/* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Home */ "./src/Components/Home.js");
-/* harmony import */ var _NoMatch__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./NoMatch */ "./src/Components/NoMatch.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
+var _store = __webpack_require__(/*! ../store */ "./src/store.js");
 
+var _store2 = _interopRequireDefault(_store);
 
+var _schools = __webpack_require__(/*! ../reducers/schools */ "./src/reducers/schools.js");
 
+var _students = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
 
+var _Schools = __webpack_require__(/*! ./Schools */ "./src/Components/Schools.js");
 
+var _Schools2 = _interopRequireDefault(_Schools);
 
+var _CreateSchool = __webpack_require__(/*! ./CreateSchool */ "./src/Components/CreateSchool.js");
 
+var _CreateSchool2 = _interopRequireDefault(_CreateSchool);
 
+var _UpdateSchool = __webpack_require__(/*! ./UpdateSchool */ "./src/Components/UpdateSchool.js");
 
+var _UpdateSchool2 = _interopRequireDefault(_UpdateSchool);
 
+var _Students = __webpack_require__(/*! ./Students */ "./src/Components/Students.js");
 
-class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+var _Students2 = _interopRequireDefault(_Students);
 
-  componentDidMount() {
-    _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch(Object(_reducers_schools__WEBPACK_IMPORTED_MODULE_3__["loadSchools"])());
-    _store__WEBPACK_IMPORTED_MODULE_2__["default"].dispatch(Object(_reducers_students__WEBPACK_IMPORTED_MODULE_4__["loadStudents"])());
+var _CreateStudent = __webpack_require__(/*! ./CreateStudent */ "./src/Components/CreateStudent.js");
+
+var _CreateStudent2 = _interopRequireDefault(_CreateStudent);
+
+var _UpdateStudent = __webpack_require__(/*! ./UpdateStudent */ "./src/Components/UpdateStudent.js");
+
+var _UpdateStudent2 = _interopRequireDefault(_UpdateStudent);
+
+var _Header = __webpack_require__(/*! ./Header */ "./src/Components/Header.js");
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Nav = __webpack_require__(/*! ./Nav */ "./src/Components/Nav.js");
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _Home = __webpack_require__(/*! ./Home */ "./src/Components/Home.js");
+
+var _Home2 = _interopRequireDefault(_Home);
+
+var _NoMatch = __webpack_require__(/*! ./NoMatch */ "./src/Components/NoMatch.js");
+
+var _NoMatch2 = _interopRequireDefault(_NoMatch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_Component) {
+  _inherits(App, _Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
   }
 
-  render() {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      react_router_dom__WEBPACK_IMPORTED_MODULE_1__["HashRouter"],
-      null,
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'div',
+  _createClass(App, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _store2.default.dispatch((0, _schools.loadSchools)());
+      _store2.default.dispatch((0, _students.loadStudents)());
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        _reactRouterDom.HashRouter,
         null,
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_11__["default"], null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { path: '/', component: _Nav__WEBPACK_IMPORTED_MODULE_12__["default"] }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('div', { className: 'nav-spacer' }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"],
+        _react2.default.createElement(
+          'div',
           null,
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { exact: true, path: '/', component: _Home__WEBPACK_IMPORTED_MODULE_13__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { exact: true, path: '/schools', component: _Schools__WEBPACK_IMPORTED_MODULE_5__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { path: '/schools/create', component: _CreateSchool__WEBPACK_IMPORTED_MODULE_6__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { path: '/schools/:id', component: _UpdateSchool__WEBPACK_IMPORTED_MODULE_7__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { exact: true, path: '/students', component: _Students__WEBPACK_IMPORTED_MODULE_8__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { exact: true, path: '/students/create', component: _CreateStudent__WEBPACK_IMPORTED_MODULE_9__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { path: '/students/create/:id', component: _CreateStudent__WEBPACK_IMPORTED_MODULE_9__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { path: '/students/:id', component: _UpdateStudent__WEBPACK_IMPORTED_MODULE_10__["default"] }),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], { component: _NoMatch__WEBPACK_IMPORTED_MODULE_14__["default"] })
+          _react2.default.createElement(_Header2.default, null),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Nav2.default }),
+          _react2.default.createElement('div', { className: 'nav-spacer' }),
+          _react2.default.createElement(
+            _reactRouterDom.Switch,
+            null,
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/schools', component: _Schools2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/schools/create', component: _CreateSchool2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/schools/:id', component: _UpdateSchool2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/students', component: _Students2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/students/create', component: _CreateStudent2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/students/create/:id', component: _CreateStudent2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/students/:id', component: _UpdateStudent2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { component: _NoMatch2.default })
+          )
         )
-      )
-    );
-  }
+      );
+    }
+  }]);
 
-}
+  return App;
+}(_react.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+exports.default = App;
 
 /***/ }),
 
@@ -29661,203 +29708,323 @@ class App extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
 /*!****************************************!*\
   !*** ./src/Components/CreateSchool.js ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_schools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/schools */ "./src/reducers/schools.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _schools = __webpack_require__(/*! ../reducers/schools */ "./src/reducers/schools.js");
+
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 // default empty "starting point" for form data
-const initialState = {
-  name: '',
-  description: '',
-  street: '',
-  city: '',
-  state: '',
-  zip: ''
+var initialState = {
+  school: {
+    name: '',
+    description: '',
+    street: '',
+    city: '',
+    state: '',
+    zip: ''
+  },
+  error: ''
 };
 
-class CreateSchool extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+var CreateSchool = function (_Component) {
+  _inherits(CreateSchool, _Component);
 
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      description: '',
-      street: '',
-      city: '',
-      state: '',
-      zip: ''
+  function CreateSchool() {
+    _classCallCheck(this, CreateSchool);
+
+    var _this = _possibleConstructorReturn(this, (CreateSchool.__proto__ || Object.getPrototypeOf(CreateSchool)).call(this));
+
+    _this.state = {
+      school: {
+        name: '',
+        description: '',
+        street: '',
+        city: '',
+        state: '',
+        zip: ''
+      },
+      error: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
-  componentDidMount() {
-    // form focus
-    const fields = ['field1', 'field2', 'field3', 'field4', 'field5'];
-    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["formFocus"])(fields);
-  }
+  _createClass(CreateSchool, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // form focus
+      var fields = ['field1', 'field2', 'field3', 'field4', 'field5'];
+      (0, _utils.formFocus)(fields);
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(event) {
+      var school = Object.assign({}, this.state.school, _defineProperty({}, event.target.name, event.target.value));
+      this.setState({ school: school });
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var _this2 = this;
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+      var _props = this.props,
+          onCreateSchool = _props.onCreateSchool,
+          history = _props.history;
 
-  handleSubmit(event) {
-    const { onCreateSchool, history } = this.props;
 
-    event.preventDefault();
-    onCreateSchool(this.state).then(wasCreated => console.log(wasCreated)).then(() => this.setState(initialState)).then(() => history.push('/schools')).catch(error => console.log(error));
-  }
+      event.preventDefault();
 
-  render() {
-    const { handleChange, handleSubmit } = this;
-    const { name, description, street, city, state, zip } = this.state;
+      // wasCreated is the boolean returned from thunk createSchool
+      // true = school created
+      // false = school NOT created
+      // after invoking thunk / dispatching action...
+      // if wasCreated is false
+      // set error message on state (this will displayed on page)
+      // if wasCreated is true
+      // school created successfully, move on and reset state and redirect
+      onCreateSchool(this.state.school).then(function (wasCreated) {
+        if (!wasCreated) {
+          _this2.setState({ error: 'School exists!  Please enter a unique name.' });
+        } else {
+          _this2.setState(initialState);
+          history.push('/schools');
+        }
+      }).catch(function (error) {
+        return console.log(error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var handleChange = this.handleChange,
+          handleSubmit = this.handleSubmit;
+      var _state$school = this.state.school,
+          name = _state$school.name,
+          description = _state$school.description,
+          street = _state$school.street,
+          city = _state$school.city,
+          state = _state$school.state,
+          zip = _state$school.zip;
+      var error = this.state.error;
 
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'div',
-      { className: 'create-school-grid-container' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+
+      return _react2.default.createElement(
         'div',
-        { className: 'create-school-grid-item-1' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h2',
-          { className: 'sub-title-create' },
-          'Create School'
-        )
-      ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'form',
-        { className: 'create-school-grid-item-2', onSubmit: handleSubmit },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'Name: ',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            '* required'
+        { className: 'create-school-grid-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'create-school-grid-item-1' },
+          _react2.default.createElement(
+            'h2',
+            { className: 'sub-title-create' },
+            'Create School'
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field1', className: 'input-field', name: 'name', type: 'text', value: name, onChange: handleChange, required: true }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'Description: '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('textarea', { id: 'field2', className: 'input-field description-field', name: 'description', type: 'text', value: description ? description : '', onChange: handleChange }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h3',
-          null,
-          'Address'
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'Street: ',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            '* required'
+        _react2.default.createElement(
+          'form',
+          { className: 'create-school-grid-item-2', onSubmit: handleSubmit },
+          _react2.default.createElement(
+            'label',
+            null,
+            'Name: ',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              '* required'
+            )
           ),
-          ' '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field3', className: 'input-field', name: 'street', type: 'text', value: street, onChange: handleChange, required: true }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'City: ',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            '* required'
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            required: true,
+            id: 'field1',
+            className: 'input-field',
+            name: 'name',
+            type: 'text',
+            value: name,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Description: '
           ),
-          ' '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field4', className: 'input-field', name: 'city', type: 'text', value: city, onChange: handleChange, required: true }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'State: ',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            '* required'
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('textarea', {
+            id: 'field2',
+            className: 'input-field description-field',
+            name: 'description',
+            type: 'text',
+            value: description ? description : '',
+            onChange: handleChange }),
+          _react2.default.createElement(
+            'h3',
+            null,
+            'Address'
           ),
-          ' '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'select',
-          { className: 'input-field-state', name: 'state', value: state, onChange: handleChange, required: true },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'option',
-            { value: '' },
-            '(state)'
+          _react2.default.createElement(
+            'label',
+            null,
+            'Street: ',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              '* required'
+            ),
+            ' '
           ),
-          _utils__WEBPACK_IMPORTED_MODULE_3__["stateAbbrev"].map(state => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'option',
-            { key: state, value: state },
-            state
-          ))
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'Zip: ',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            '* required'
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            required: true,
+            id: 'field3',
+            className: 'input-field',
+            name: 'street',
+            type: 'text',
+            value: street,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'City: ',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              '* required'
+            ),
+            ' '
           ),
-          ' '
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            required: true,
+            id: 'field4',
+            className: 'input-field',
+            name: 'city',
+            type: 'text',
+            value: city,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'State: ',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              '* required'
+            ),
+            ' '
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'select',
+            {
+              required: true,
+              className: 'input-field-state',
+              name: 'state',
+              value: state,
+              onChange: handleChange
+            },
+            _react2.default.createElement(
+              'option',
+              { value: '' },
+              '(state)'
+            ),
+            _utils.stateAbbrev.map(function (state) {
+              return _react2.default.createElement(
+                'option',
+                { key: state, value: state },
+                state
+              );
+            })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Zip: ',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              '* required'
+            ),
+            ' '
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            required: true,
+            id: 'field5',
+            className: 'input-field',
+            name: 'zip',
+            type: 'text',
+            minLength: '5',
+            value: zip,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'button',
+            { className: 'create-form-btn', type: 'submit' },
+            'Save'
+          )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field5', className: 'input-field', name: 'zip', type: 'text', value: zip, onChange: handleChange, minLength: '5', required: true }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'button',
-          { className: 'create-form-btn', type: 'submit' },
-          'Save'
-        )
-      )
-    );
-  }
+        error ? _react2.default.createElement(
+          'p',
+          { className: 'error' },
+          error
+        ) : ''
+      );
+    }
+  }]);
 
-}
+  return CreateSchool;
+}(_react.Component);
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    onCreateSchool: school => dispatch(Object(_reducers_schools__WEBPACK_IMPORTED_MODULE_2__["createSchool"])(school))
+    onCreateSchool: function onCreateSchool(school) {
+      return dispatch((0, _schools.createSchool)(school));
+    }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(null, mapDispatchToProps)(CreateSchool));
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(CreateSchool);
 
 /***/ }),
 
@@ -29865,214 +30032,321 @@ const mapDispatchToProps = dispatch => {
 /*!*****************************************!*\
   !*** ./src/Components/CreateStudent.js ***!
   \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_students__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
-const initialState = {
+var _students = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
+
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var initialState = {
   firstName: '',
   lastName: '',
   gpa: '',
   schoolId: ''
 };
 
-class CreateStudent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+var CreateStudent = function (_Component) {
+  _inherits(CreateStudent, _Component);
 
-  constructor() {
-    super();
-    this.state = {
+  function CreateStudent() {
+    _classCallCheck(this, CreateStudent);
+
+    var _this = _possibleConstructorReturn(this, (CreateStudent.__proto__ || Object.getPrototypeOf(CreateStudent)).call(this));
+
+    _this.state = {
       firstName: '',
       lastName: '',
       gpa: '',
       schoolId: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
-  componentDidMount() {
-    const { schoolId } = this.props;
-    console.log(schoolId);
-    this.setState({ schoolId });
+  _createClass(CreateStudent, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var schoolId = this.props.schoolId;
 
-    // form focus
-    const fields = ['field1', 'field2', 'field3'];
-    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["formFocus"])(fields);
-  }
+      this.setState({ schoolId: schoolId });
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+      // form focus
+      var fields = ['field1', 'field2', 'field3'];
+      (0, _utils.formFocus)(fields);
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var _this2 = this;
 
-  handleSubmit(event) {
-    const { onCreateStudent, history } = this.props;
+      var _props = this.props,
+          onCreateStudent = _props.onCreateStudent,
+          history = _props.history;
 
-    event.preventDefault();
-    onCreateStudent(this.state).then(() => this.setState(initialState)).then(() => history.push('/students')).catch(error => console.log(error));
-  }
 
-  render() {
-    const { handleChange, handleSubmit } = this;
-    const { firstName, lastName, gpa, schoolId } = this.state;
-    const { schools } = this.props;
+      event.preventDefault();
+      onCreateStudent(this.state).then(function () {
+        return _this2.setState(initialState);
+      }).then(function () {
+        return history.push('/students');
+      }).catch(function (error) {
+        return console.log(error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var handleChange = this.handleChange,
+          handleSubmit = this.handleSubmit;
+      var _state = this.state,
+          firstName = _state.firstName,
+          lastName = _state.lastName,
+          gpa = _state.gpa,
+          schoolId = _state.schoolId;
+      var schools = this.props.schools;
 
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'div',
-      { className: 'create-student-grid-container' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+
+      return _react2.default.createElement(
         'div',
-        { className: 'create-student-grid-item-1' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h2',
-          { className: 'sub-title-create' },
-          'Create Student'
-        )
-      ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'form',
-        { className: 'create-school-grid-item-2', onSubmit: handleSubmit },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'First Name:',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            ' * required'
+        { className: 'create-student-grid-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'create-student-grid-item-1' },
+          _react2.default.createElement(
+            'h2',
+            { className: 'sub-title-create' },
+            'Create Student'
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', {
-          required: true,
-          id: 'field1',
-          className: 'input-field',
-          name: 'firstName',
-          type: 'text', value: firstName,
-          onChange: handleChange
-        }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'Last Name:',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            ' * required'
-          )
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', {
-          required: true,
-          id: 'field2',
-          className: 'input-field',
-          name: 'lastName',
-          type: 'text',
-          value: lastName,
-          onChange: handleChange
-        }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'GPA:'
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', {
-          id: 'field3',
-          className: 'input-field-gpa',
-          name: 'gpa',
-          type: 'number',
-          step: '0.1',
-          min: '0.0',
-          max: '4.0',
-          placeholder: '0.0',
-          value: gpa,
-          onChange: handleChange
-        }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'School:  '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'select',
-          {
-            className: 'input-field-school',
-            name: 'schoolId',
-            value: schoolId,
-            onChange: handleChange
-          },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'option',
-            { value: '' },
-            '(select school)'
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'form',
+          { className: 'create-school-grid-item-2', onSubmit: handleSubmit },
+          _react2.default.createElement(
+            'label',
+            null,
+            'First Name:',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              ' * required'
+            )
           ),
-          schools.map(school => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'option',
-            { key: school.id, value: school.id },
-            school.name
-          ))
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'button',
-          { className: 'create-form-btn', type: 'submit' },
-          'Save'
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            required: true,
+            id: 'field1',
+            className: 'input-field',
+            name: 'firstName',
+            type: 'text', value: firstName,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Last Name:',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              ' * required'
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            required: true,
+            id: 'field2',
+            className: 'input-field',
+            name: 'lastName',
+            type: 'text',
+            value: lastName,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'GPA:'
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', {
+            id: 'field3',
+            className: 'input-field-gpa',
+            name: 'gpa',
+            type: 'number',
+            step: '0.1',
+            min: '0.0',
+            max: '4.0',
+            placeholder: '0.0',
+            value: gpa,
+            onChange: handleChange
+          }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'School:  '
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'select',
+            {
+              className: 'input-field-school',
+              name: 'schoolId',
+              value: schoolId,
+              onChange: handleChange
+            },
+            _react2.default.createElement(
+              'option',
+              { value: '' },
+              '(select school)'
+            ),
+            schools.map(function (school) {
+              return _react2.default.createElement(
+                'option',
+                { key: school.id, value: school.id },
+                school.name
+              );
+            })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'button',
+            { className: 'create-form-btn', type: 'submit' },
+            'Save'
+          )
         )
-      )
-    );
-  }
+      );
+    }
+  }]);
 
-}
+  return CreateStudent;
+}(_react.Component);
 
-const mapStateToProps = ({ schools }, { match }) => {
+var mapStateToProps = function mapStateToProps(_ref, _ref2) {
+  var schools = _ref.schools;
+  var match = _ref2.match;
+
 
   // a student can be created with a school id prepulated
   // if included, this id value will come from URL
   // this checks for value before passing id as a prop to Component
-  const schoolId = match.params.id ? +match.params.id : '';
+  var schoolId = match.params.id ? +match.params.id : '';
 
   return {
-    schools,
-    schoolId
+    schools: schools,
+    schoolId: schoolId
   };
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    onCreateStudent: student => {
+    onCreateStudent: function onCreateStudent(student) {
       if (student.schoolId === '') {
         student.schoolId = null;
       }
-      return dispatch(Object(_reducers_students__WEBPACK_IMPORTED_MODULE_2__["createStudent"])(student));
+      return dispatch((0, _students.createStudent)(student));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(CreateStudent));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(CreateStudent);
+
+/***/ }),
+
+/***/ "./src/Components/CreateStudentWithSchool.js":
+/*!***************************************************!*\
+  !*** ./src/Components/CreateStudentWithSchool.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CreateStudentWithSchool = function CreateStudentWithSchool(_ref) {
+  var schoolId = _ref.schoolId,
+      schoolName = _ref.schoolName;
+
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'enroll-school-grid-item-4 enrolled-students-area' },
+    _react2.default.createElement(
+      'h3',
+      { className: 'enrolled-students-subtitle' },
+      'Create New Student',
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
+        'span',
+        { className: 'enrolled-school-name' },
+        ' in ',
+        schoolName
+      )
+    ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/students/create/' + schoolId },
+      _react2.default.createElement(
+        'button',
+        { className: 'create-btn' },
+        'Create Student'
+      )
+    )
+  );
+};
+
+exports.default = CreateStudentWithSchool;
 
 /***/ }),
 
@@ -30080,66 +30354,78 @@ const mapDispatchToProps = dispatch => {
 /*!********************************************!*\
   !*** ./src/Components/EnrolledStudents.js ***!
   \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _reducers_students__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _students = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var EnrolledStudents = function EnrolledStudents(_ref) {
+  var enrolledStudents = _ref.enrolledStudents,
+      onRemoveStudent = _ref.onRemoveStudent,
+      schoolName = _ref.schoolName;
 
 
-
-
-const EnrolledStudents = ({ enrolledStudents, onRemoveStudent, schoolName }) => {
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+  return _react2.default.createElement(
     'div',
     { className: 'enrolled-students-area' },
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement(
       'h3',
       { className: 'enrolled-students-subtitle' },
       'Enrolled Students',
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
         'span',
         { className: 'enrolled-school-name' },
         ' in ',
         schoolName
       )
     ),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement(
       'table',
       { className: 'enroll-table' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'tbody',
         null,
-        enrolledStudents.map(student => {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        enrolledStudents.map(function (student) {
+          return _react2.default.createElement(
             'tr',
             { key: student.id },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'enrolled-student' },
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
-                { to: `/students/${student.id}` },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/students/' + student.id },
                 student.firstName,
                 ' ',
                 student.lastName
               )
             ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               null,
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+              _react2.default.createElement(
                 'button',
-                { className: 'unenroll-student-btn', onClick: () => onRemoveStudent(student) },
+                { className: 'unenroll-student-btn', onClick: function onClick() {
+                    return onRemoveStudent(student);
+                  } },
                 'x'
               )
             )
@@ -30150,24 +30436,29 @@ const EnrolledStudents = ({ enrolledStudents, onRemoveStudent, schoolName }) => 
   );
 };
 
-const mapStateToProps = ({ students }, { schoolId }) => {
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
+  var students = _ref2.students;
+  var schoolId = _ref3.schoolId;
+
 
   return {
-    enrolledStudents: students.filter(student => student.schoolId == schoolId)
+    enrolledStudents: students.filter(function (student) {
+      return student.schoolId == schoolId;
+    })
   };
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
   return {
-    onRemoveStudent: student => {
+    onRemoveStudent: function onRemoveStudent(student) {
       student.schoolId = null;
-      dispatch(Object(_reducers_students__WEBPACK_IMPORTED_MODULE_3__["updateStudent"])(student));
+      dispatch((0, _students.updateStudent)(student));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(EnrolledStudents));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(EnrolledStudents);
 
 /***/ }),
 
@@ -30175,20 +30466,27 @@ const mapDispatchToProps = dispatch => {
 /*!**********************************!*\
   !*** ./src/Components/Header.js ***!
   \**********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const Header = () => {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Header = function Header() {
+  return _react2.default.createElement(
     "div",
     { className: "header" },
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement(
       "h1",
       null,
       "ACME Schools Dashboard"
@@ -30196,7 +30494,7 @@ const Header = () => {
   );
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Header);
+exports.default = Header;
 
 /***/ }),
 
@@ -30204,25 +30502,32 @@ const Header = () => {
 /*!********************************!*\
   !*** ./src/Components/Home.js ***!
   \********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const Home = () => {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Home = function Home() {
+
+  return _react2.default.createElement(
     "div",
     null,
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", { className: "home-page-pic", src: "home-page.jpg" })
+    _react2.default.createElement("img", { className: "home-page-pic", src: "home-page.jpg" })
   );
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Home);
+exports.default = Home;
 
 /***/ }),
 
@@ -30230,122 +30535,167 @@ const Home = () => {
 /*!******************************************!*\
   !*** ./src/Components/ManageStudents.js ***!
   \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_students__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
-/* harmony import */ var _EnrolledStudents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./EnrolledStudents */ "./src/Components/EnrolledStudents.js");
-/* harmony import */ var _ManageStudents_Create__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ManageStudents_Create */ "./src/Components/ManageStudents_Create.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _students = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
 
-class ManageStudents extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+var _EnrolledStudents = __webpack_require__(/*! ./EnrolledStudents */ "./src/Components/EnrolledStudents.js");
 
-  constructor() {
-    super();
-    this.state = {
+var _EnrolledStudents2 = _interopRequireDefault(_EnrolledStudents);
+
+var _CreateStudentWithSchool = __webpack_require__(/*! ./CreateStudentWithSchool */ "./src/Components/CreateStudentWithSchool.js");
+
+var _CreateStudentWithSchool2 = _interopRequireDefault(_CreateStudentWithSchool);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ManageStudents = function (_Component) {
+  _inherits(ManageStudents, _Component);
+
+  function ManageStudents() {
+    _classCallCheck(this, ManageStudents);
+
+    var _this = _possibleConstructorReturn(this, (ManageStudents.__proto__ || Object.getPrototypeOf(ManageStudents)).call(this));
+
+    _this.state = {
       studentId: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+  _createClass(ManageStudents, [{
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var _props = this.props,
+          onUpdateStudent = _props.onUpdateStudent,
+          students = _props.students,
+          schoolId = _props.schoolId;
 
-  handleSubmit(event) {
-    const { onUpdateStudent, students, schoolId } = this.props;
-    const studentId = +this.state.studentId; // type coerce for === match
+      var studentId = +this.state.studentId; // type coerce for === match
 
-    event.preventDefault();
-    onUpdateStudent(students, studentId, schoolId).catch(error => console.log(error));
-  }
+      event.preventDefault();
+      onUpdateStudent(students, studentId, schoolId).catch(function (error) {
+        return console.log(error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var handleChange = this.handleChange,
+          handleSubmit = this.handleSubmit;
+      var _props2 = this.props,
+          students = _props2.students,
+          schoolId = _props2.schoolId,
+          schoolName = _props2.schoolName;
 
-  render() {
-    const { handleChange, handleSubmit } = this;
-    const { students, schoolId, schoolName } = this.props;
 
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'div',
-      null,
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      return _react2.default.createElement(
         'div',
-        { className: 'update-school-sub-title' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h3',
-          null,
-          'Manage Students'
-        )
-      ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_EnrolledStudents__WEBPACK_IMPORTED_MODULE_3__["default"], { schoolId: schoolId, schoolName: schoolName }),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'div',
-        { className: 'enrolled-students-area' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'form',
-          { onSubmit: handleSubmit },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        null,
+        _react2.default.createElement(
+          'div',
+          { className: 'update-school-sub-title' },
+          _react2.default.createElement(
             'h3',
-            { className: 'enrolled-students-subtitle' },
-            'Enroll Student',
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'span',
-              { className: 'enrolled-school-name' },
-              ' in ',
-              schoolName
-            )
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'select',
-            { className: 'enroll-student-list', name: 'studentId', onChange: handleChange },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'option',
-              { value: '' },
-              '(select student)'
-            ),
-            students.map(student => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'option',
-              { key: student.id, value: student.id },
-              student.firstName,
-              ' ',
-              student.lastName
-            ))
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'button',
-            { className: 'enroll-student-btn', type: 'submit' },
-            '+'
+            null,
+            'Manage Students'
           )
-        )
-      ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ManageStudents_Create__WEBPACK_IMPORTED_MODULE_4__["default"], { schoolId: schoolId, schoolName: schoolName })
-    );
-  }
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(_EnrolledStudents2.default, { schoolId: schoolId, schoolName: schoolName }),
+        _react2.default.createElement(
+          'div',
+          { className: 'enrolled-students-area' },
+          _react2.default.createElement(
+            'form',
+            { onSubmit: handleSubmit },
+            _react2.default.createElement(
+              'h3',
+              { className: 'enrolled-students-subtitle' },
+              'Enroll Student',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'span',
+                { className: 'enrolled-school-name' },
+                ' in ',
+                schoolName
+              )
+            ),
+            _react2.default.createElement(
+              'select',
+              { className: 'enroll-student-list', name: 'studentId', onChange: handleChange },
+              _react2.default.createElement(
+                'option',
+                { value: '' },
+                '(select student)'
+              ),
+              students.map(function (student) {
+                return _react2.default.createElement(
+                  'option',
+                  { key: student.id, value: student.id },
+                  student.firstName,
+                  ' ',
+                  student.lastName
+                );
+              })
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: 'enroll-student-btn', type: 'submit' },
+              '+'
+            )
+          )
+        ),
+        _react2.default.createElement(_CreateStudentWithSchool2.default, { schoolId: schoolId, schoolName: schoolName })
+      );
+    }
+  }]);
 
-}
+  return ManageStudents;
+}(_react.Component);
 
-const mapStateToProps = ({ students }) => {
+var mapStateToProps = function mapStateToProps(_ref) {
+  var students = _ref.students;
+
 
   return {
-    students
+    students: students
   };
 };
 
-const mapDispatchToProps = dispatch => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
   return {
 
@@ -30353,63 +30703,17 @@ const mapDispatchToProps = dispatch => {
     // finds student to update from student array
     // modifies schoolId with selected school from drop down
     // invokes thunk to update student in DB and store
-    onUpdateStudent: (students, studentId, schoolId) => {
-      const student = students.find(student => student.id === studentId);
+    onUpdateStudent: function onUpdateStudent(students, studentId, schoolId) {
+      var student = students.find(function (student) {
+        return student.id === studentId;
+      });
       student.schoolId = schoolId;
-      return dispatch(Object(_reducers_students__WEBPACK_IMPORTED_MODULE_2__["updateStudent"])(student));
+      return dispatch((0, _students.updateStudent)(student));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(ManageStudents));
-
-/***/ }),
-
-/***/ "./src/Components/ManageStudents_Create.js":
-/*!*************************************************!*\
-  !*** ./src/Components/ManageStudents_Create.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-
-
-
-const ManageStudents_Create = ({ schoolId, schoolName }) => {
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-    'div',
-    { className: 'enroll-school-grid-item-4 enrolled-students-area' },
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'h3',
-      { className: 'enrolled-students-subtitle' },
-      'Create New Student',
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'span',
-        { className: 'enrolled-school-name' },
-        ' in ',
-        schoolName
-      )
-    ),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"],
-      { to: `/students/create/${schoolId}` },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'button',
-        { className: 'create-btn' },
-        'Create Student'
-      )
-    )
-  );
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (ManageStudents_Create);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ManageStudents);
 
 /***/ }),
 
@@ -30417,23 +30721,34 @@ const ManageStudents_Create = ({ schoolId, schoolName }) => {
 /*!*******************************!*\
   !*** ./src/Components/Nav.js ***!
   \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-const Nav = ({ schoolCount, studentCount, path }) => {
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav(_ref) {
+  var schoolCount = _ref.schoolCount,
+      studentCount = _ref.studentCount,
+      path = _ref.path;
+
 
   // displays "active" button based on current URL path
-  const selected = (selectedPath, path) => {
+  var selected = function selected(selectedPath, path) {
 
     if (path.includes(selectedPath)) {
       return "nav-button nav-selected";
@@ -30442,32 +30757,32 @@ const Nav = ({ schoolCount, studentCount, path }) => {
     return "nav-button";
   };
 
-  return schoolCount && studentCount ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+  return schoolCount && studentCount ? _react2.default.createElement(
     'div',
     { className: 'nav' },
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement(
       'div',
       { className: 'nav-grid-container' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'nav-grid-item-1' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"],
+        _react2.default.createElement(
+          _reactRouterDom.Link,
           { to: '/' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'button',
             { className: path === "/" ? "nav-button nav-selected" : "nav-button" },
             'Home'
           )
         )
       ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'nav-grid-item-2' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"],
+        _react2.default.createElement(
+          _reactRouterDom.Link,
           { to: '/schools' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'button',
             { className: selected("/schools", path) },
             'Schools (',
@@ -30476,13 +30791,13 @@ const Nav = ({ schoolCount, studentCount, path }) => {
           )
         )
       ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'nav-grid-item-3' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"],
+        _react2.default.createElement(
+          _reactRouterDom.Link,
           { to: '/students' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'button',
             { className: selected("/students", path) },
             'Students (',
@@ -30495,19 +30810,23 @@ const Nav = ({ schoolCount, studentCount, path }) => {
   ) : '';
 };
 
-const mapStateToProps = ({ schools, students }, { location }) => {
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
+  var schools = _ref2.schools,
+      students = _ref2.students;
+  var location = _ref3.location;
+
 
   // console.log(location.pathname);
-  const path = location.pathname;
+  var path = location.pathname;
 
   return {
     schoolCount: schools.length,
     studentCount: students.length,
-    path
+    path: path
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps)(Nav));
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
 
 /***/ }),
 
@@ -30515,20 +30834,27 @@ const mapStateToProps = ({ schools, students }, { location }) => {
 /*!***********************************!*\
   !*** ./src/Components/NoMatch.js ***!
   \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const NoMatch = () => {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", { className: "img-404", src: "404.jpg" });
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NoMatch = function NoMatch() {
+  return _react2.default.createElement("img", { className: "img-404", src: "404.jpg" });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (NoMatch);
+exports.default = NoMatch;
 
 /***/ }),
 
@@ -30536,47 +30862,60 @@ const NoMatch = () => {
 /*!***********************************!*\
   !*** ./src/Components/Schools.js ***!
   \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
-const Schools = ({ schools, students }) => {
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Schools = function Schools(_ref) {
+  var schools = _ref.schools,
+      students = _ref.students;
+
 
   // finds total number of students per school
-  const getStudentCount = id => students.filter(student => student.schoolId == id).length;
+  var getStudentCount = function getStudentCount(id) {
+    return students.filter(function (student) {
+      return student.schoolId == id;
+    }).length;
+  };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+  return _react2.default.createElement(
     'div',
     null,
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement(
       'div',
       { className: 'school-grid-container' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'school-grid-item-1' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'h2',
           { className: 'sub-title-school' },
           'All Schools'
         )
       ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'school-grid-item-2' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
+        _react2.default.createElement(
+          _reactRouterDom.Link,
           { to: '/schools/create' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'button',
             { className: 'create-btn' },
             'Create School'
@@ -30584,47 +30923,47 @@ const Schools = ({ schools, students }) => {
         )
       )
     ),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement('br', null),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement(
       'table',
       { className: 'school-table' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'tbody',
         null,
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'tr',
           { className: 'table-heading' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'th',
             { className: 'name-heading' },
             'School'
           ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'th',
             null,
             'Students'
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'tr',
           null,
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('td', { className: 'blank-row' })
+          _react2.default.createElement('td', { className: 'blank-row' })
         ),
-        schools.map(school => {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        schools.map(function (school) {
+          return _react2.default.createElement(
             'tr',
             { key: school.id },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'school-name' },
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
-                { to: `/schools/${school.id}` },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/schools/' + school.id },
                 school.name
               )
             ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'student-count' },
               getStudentCount(school.id)
@@ -30636,15 +30975,18 @@ const Schools = ({ schools, students }) => {
   );
 };
 
-const mapStateToProps = ({ schools, students }) => {
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var schools = _ref2.schools,
+      students = _ref2.students;
+
 
   return {
-    schools,
-    students
+    schools: schools,
+    students: students
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Schools));
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Schools);
 
 /***/ }),
 
@@ -30652,46 +30994,60 @@ const mapStateToProps = ({ schools, students }) => {
 /*!************************************!*\
   !*** ./src/Components/Students.js ***!
   \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
-const Students = ({ students, schools }) => {
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Students = function Students(_ref) {
+  var students = _ref.students,
+      schools = _ref.schools;
+
 
   // finds name of school for each student via student.schoolId
-  const getSchoolName = id => schools.find(school => school.id == id).name;
+  var getSchoolName = function getSchoolName(id) {
+    return schools.find(function (school) {
+      return school.id == id;
+    }).name;
+  };
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+  return _react2.default.createElement(
     'div',
     null,
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement(
       'div',
       { className: 'student-grid-container' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'student-grid-item-1' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'h2',
           { className: 'sub-title-students' },
           'All Students'
         )
       ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'div',
         { className: 'student-grid-item-2' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
+        _react2.default.createElement(
+          _reactRouterDom.Link,
           { to: '/students/create' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'button',
             { className: 'create-btn' },
             'Create Student'
@@ -30699,72 +31055,72 @@ const Students = ({ students, schools }) => {
         )
       )
     ),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-    react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+    _react2.default.createElement('br', null),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement(
       'table',
       { className: 'student-table' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      _react2.default.createElement(
         'tbody',
         null,
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'tr',
           { className: 'table-heading' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'th',
             { className: 'name-heading' },
             'Student'
           ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          _react2.default.createElement(
             'th',
             null,
             'School'
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'tr',
           null,
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('td', { className: 'blank-row' })
+          _react2.default.createElement('td', { className: 'blank-row' })
         ),
-        students.map(student => {
-          return student.schoolId ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        students.map(function (student) {
+          return student.schoolId ? _react2.default.createElement(
             'tr',
             { key: student.id },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'student-cell' },
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
-                { to: `/students/${student.id}` },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/students/' + student.id },
                 student.firstName,
                 ' ',
                 student.lastName
               )
             ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               { className: 'school-cell' },
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
-                { to: `/schools/${student.schoolId}` },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/schools/' + student.schoolId },
                 getSchoolName(student.schoolId)
               )
             )
-          ) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          ) : _react2.default.createElement(
             'tr',
             { key: student.id },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+            _react2.default.createElement(
               'td',
               null,
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"],
-                { to: `/students/${student.id}` },
+              _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/students/' + student.id },
                 student.firstName,
                 ' ',
                 student.lastName
               )
             ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('td', null)
+            _react2.default.createElement('td', null)
           );
         })
       )
@@ -30772,15 +31128,18 @@ const Students = ({ students, schools }) => {
   );
 };
 
-const mapStateToProps = ({ schools, students }) => {
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var schools = _ref2.schools,
+      students = _ref2.students;
+
 
   return {
-    schools,
-    students
+    schools: schools,
+    students: students
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps)(Students));
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Students);
 
 /***/ }),
 
@@ -30788,31 +31147,51 @@ const mapStateToProps = ({ schools, students }) => {
 /*!****************************************!*\
   !*** ./src/Components/UpdateSchool.js ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_schools__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/schools */ "./src/reducers/schools.js");
-/* harmony import */ var _ManageStudents__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ManageStudents */ "./src/Components/ManageStudents.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils */ "./src/utils.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _schools = __webpack_require__(/*! ../reducers/schools */ "./src/reducers/schools.js");
 
+var _ManageStudents = __webpack_require__(/*! ./ManageStudents */ "./src/Components/ManageStudents.js");
 
-class UpdateSchool extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+var _ManageStudents2 = _interopRequireDefault(_ManageStudents);
 
-  constructor() {
-    super();
-    this.state = {
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UpdateSchool = function (_Component) {
+  _inherits(UpdateSchool, _Component);
+
+  function UpdateSchool() {
+    _classCallCheck(this, UpdateSchool);
+
+    var _this = _possibleConstructorReturn(this, (UpdateSchool.__proto__ || Object.getPrototypeOf(UpdateSchool)).call(this));
+
+    _this.state = {
       name: '',
       description: '',
       street: '',
@@ -30821,220 +31200,308 @@ class UpdateSchool extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       zip: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
-  componentDidMount() {
-    const { school } = this.props;
-    this.setState(school);
+  _createClass(UpdateSchool, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var school = this.props.school;
 
-    // form focus
-    const fields = ['field1', 'field2', 'field3', 'field4', 'field5'];
-    Object(_utils__WEBPACK_IMPORTED_MODULE_4__["formFocus"])(fields);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { school } = this.props;
-
-    if (prevProps !== this.props) {
       this.setState(school);
+
+      // form focus
+      var fields = ['field1', 'field2', 'field3', 'field4', 'field5'];
+      (0, _utils.formFocus)(fields);
     }
-  }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      var school = this.props.school;
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
 
-  handleSubmit(event) {
-    const { onUpdateSchool, history } = this.props;
+      if (prevProps !== this.props) {
+        this.setState(school);
+      }
+    }
+  }, {
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var _props = this.props,
+          onUpdateSchool = _props.onUpdateSchool,
+          history = _props.history;
 
-    event.preventDefault();
-    onUpdateSchool(this.state).then(() => history.push('/schools')).catch(error => console.log(error));
-  }
 
-  render() {
-    const { handleChange, handleSubmit } = this;
-    const { onDeleteSchool, school, id } = this.props;
-    const { name, description, street, city, state, zip } = this.state;
+      event.preventDefault();
+      onUpdateSchool(this.state).then(function () {
+        return history.push('/schools');
+      }).catch(function (error) {
+        return console.log(error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var handleChange = this.handleChange,
+          handleSubmit = this.handleSubmit;
+      var _props2 = this.props,
+          onDeleteSchool = _props2.onDeleteSchool,
+          school = _props2.school,
+          id = _props2.id;
+      var _state = this.state,
+          name = _state.name,
+          description = _state.description,
+          street = _state.street,
+          city = _state.city,
+          state = _state.state,
+          zip = _state.zip;
 
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'div',
-      null,
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+
+      return _react2.default.createElement(
         'div',
-        { className: 'title-block' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        null,
+        _react2.default.createElement(
           'div',
-          { className: 'update-school-name' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'h2',
-            null,
-            name
-          )
-        )
-      ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'div',
-        { className: 'update-school-grid-container' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'div',
-          { className: 'update-school-grid-item-1' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+          { className: 'title-block' },
+          _react2.default.createElement(
             'div',
-            { className: 'update-school-sub-title' },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'h3',
+            { className: 'update-school-name' },
+            _react2.default.createElement(
+              'h2',
               null,
-              'Update School'
-            )
-          ),
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'form',
-            { onSubmit: handleSubmit },
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'label',
-              null,
-              'Name:',
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'span',
-                { className: 'required-field' },
-                ' * required'
-              )
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field1', className: 'input-field', name: 'name', type: 'text', value: name, onChange: handleChange }),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'label',
-              null,
-              'Description:'
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('textarea', { id: 'field2', className: 'input-field description-field', name: 'description', type: 'text', value: description, onChange: handleChange }),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'h3',
-              null,
-              'Address'
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'label',
-              null,
-              'Street:',
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'span',
-                { className: 'required-field' },
-                ' * required'
-              )
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field3', className: 'input-field', name: 'street', type: 'text', value: street, onChange: handleChange }),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'label',
-              null,
-              'City:',
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'span',
-                { className: 'required-field' },
-                ' * required'
-              )
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field4', className: 'input-field', name: 'city', type: 'text', value: city, onChange: handleChange }),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'label',
-              null,
-              'State:',
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'span',
-                { className: 'required-field' },
-                ' * required'
-              )
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'select',
-              { className: 'input-field-state', name: 'state', value: state, onChange: handleChange },
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'option',
-                { value: '' },
-                '(state)'
-              ),
-              _utils__WEBPACK_IMPORTED_MODULE_4__["stateAbbrev"].map(state => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'option',
-                { key: state, value: state },
-                state
-              ))
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'label',
-              null,
-              'Zip:',
-              react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-                'span',
-                { className: 'required-field' },
-                ' * required'
-              )
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field5', className: 'input-field', name: 'zip', type: 'text', value: zip, onChange: handleChange, minLength: '5', required: true }),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'button',
-              { className: 'create-form-btn', type: 'submit' },
-              'Save'
-            ),
-            react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-              'button',
-              { className: 'delete-form-btn', type: 'button', onClick: () => onDeleteSchool(school) },
-              'Delete'
+              name
             )
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+        _react2.default.createElement(
           'div',
-          { className: 'update-school-grid-item-2' },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ManageStudents__WEBPACK_IMPORTED_MODULE_3__["default"], { schoolId: id, schoolName: name })
+          { className: 'update-school-grid-container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'update-school-grid-item-1' },
+            _react2.default.createElement(
+              'div',
+              { className: 'update-school-sub-title' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Update School'
+              )
+            ),
+            _react2.default.createElement(
+              'form',
+              { onSubmit: handleSubmit },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Name:',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'required-field' },
+                  ' * required'
+                )
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', {
+                required: true,
+                id: 'field1',
+                className: 'input-field',
+                name: 'name',
+                type: 'text',
+                value: name,
+                onChange: handleChange
+              }),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'label',
+                null,
+                'Description:'
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('textarea', {
+                id: 'field2',
+                className: 'input-field description-field',
+                name: 'description',
+                type: 'text',
+                value: description,
+                onChange: handleChange
+              }),
+              _react2.default.createElement(
+                'h3',
+                null,
+                'Address'
+              ),
+              _react2.default.createElement(
+                'label',
+                null,
+                'Street:',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'required-field' },
+                  ' * required'
+                )
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', {
+                required: true,
+                id: 'field3',
+                className: 'input-field',
+                name: 'street',
+                type: 'text',
+                value: street,
+                onChange: handleChange
+              }),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'label',
+                null,
+                'City:',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'required-field' },
+                  ' * required'
+                )
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', {
+                required: true,
+                id: 'field4',
+                className: 'input-field',
+                name: 'city',
+                type: 'text',
+                value: city,
+                onChange: handleChange
+              }),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'label',
+                null,
+                'State:',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'required-field' },
+                  ' * required'
+                )
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'select',
+                { className: 'input-field-state', name: 'state', value: state, onChange: handleChange },
+                _react2.default.createElement(
+                  'option',
+                  { value: '' },
+                  '(state)'
+                ),
+                _utils.stateAbbrev.map(function (state) {
+                  return _react2.default.createElement(
+                    'option',
+                    { key: state, value: state },
+                    state
+                  );
+                })
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'label',
+                null,
+                'Zip:',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'required-field' },
+                  ' * required'
+                )
+              ),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', {
+                required: true,
+                id: 'field5',
+                className: 'input-field',
+                name: 'zip',
+                type: 'text',
+                value: zip,
+                onChange: handleChange,
+                minLength: '5'
+              }),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('br', null),
+              _react2.default.createElement(
+                'button',
+                { className: 'create-form-btn', type: 'submit' },
+                'Save'
+              ),
+              _react2.default.createElement(
+                'button',
+                {
+                  className: 'delete-form-btn',
+                  type: 'button',
+                  onClick: function onClick() {
+                    return onDeleteSchool(school);
+                  }
+                },
+                'Delete'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'update-school-grid-item-2' },
+            _react2.default.createElement(_ManageStudents2.default, { schoolId: id, schoolName: name })
+          )
         )
-      )
-    );
-  }
+      );
+    }
+  }]);
 
-}
+  return UpdateSchool;
+}(_react.Component);
 
-const mapStateToProps = ({ schools }, { match }) => {
-  const id = +match.params.id;
+var mapStateToProps = function mapStateToProps(_ref, _ref2) {
+  var schools = _ref.schools;
+  var match = _ref2.match;
+
+  var id = +match.params.id;
 
   if (!schools) {
     return null;
   }
 
   return {
-    school: schools.find(school => school.id === id),
-    id
+    school: schools.find(function (school) {
+      return school.id === id;
+    }),
+    id: id
   };
 };
 
-const mapDispatchToProps = (dispatch, { history }) => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref3) {
+  var history = _ref3.history;
+
   return {
-    onDeleteSchool: school => {
-      dispatch(Object(_reducers_schools__WEBPACK_IMPORTED_MODULE_2__["deleteSchool"])(school)).then(() => history.push('/schools'));
+    onDeleteSchool: function onDeleteSchool(school) {
+      dispatch((0, _schools.deleteSchool)(school)).then(function () {
+        return history.push('/schools');
+      });
     },
 
-    onUpdateSchool: school => dispatch(Object(_reducers_schools__WEBPACK_IMPORTED_MODULE_2__["updateSchool"])(school))
+    onUpdateSchool: function onUpdateSchool(school) {
+      return dispatch((0, _schools.updateSchool)(school));
+    }
 
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(UpdateSchool));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(UpdateSchool);
 
 /***/ }),
 
@@ -31042,191 +31509,251 @@ const mapDispatchToProps = (dispatch, { history }) => {
 /*!*****************************************!*\
   !*** ./src/Components/UpdateStudent.js ***!
   \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_students__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils */ "./src/utils.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
-class UpdateStudent extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+var _students = __webpack_require__(/*! ../reducers/students */ "./src/reducers/students.js");
 
-  constructor() {
-    super();
-    this.state = {
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UpdateStudent = function (_Component) {
+  _inherits(UpdateStudent, _Component);
+
+  function UpdateStudent() {
+    _classCallCheck(this, UpdateStudent);
+
+    var _this = _possibleConstructorReturn(this, (UpdateStudent.__proto__ || Object.getPrototypeOf(UpdateStudent)).call(this));
+
+    _this.state = {
       firstName: '',
       lastName: '',
       gpa: '',
       schoolId: ''
     };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    _this.handleChange = _this.handleChange.bind(_this);
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  handleSubmit(event) {
-    const { onUpdateStudent } = this.props;
-
-    event.preventDefault();
-    onUpdateStudent(this.state);
-  }
-
-  componentDidMount() {
-    const { student } = this.props;
-    this.setState(student);
-
-    // form focus
-    const fields = ['field1', 'field2', 'field3'];
-    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["formFocus"])(fields);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { student } = this.props;
-
-    if (prevProps !== this.props) {
-      this.setState(student);
+  _createClass(UpdateStudent, [{
+    key: 'handleChange',
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
     }
-  }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(event) {
+      var onUpdateStudent = this.props.onUpdateStudent;
 
-  render() {
-    const { handleChange, handleSubmit } = this;
-    const { firstName, lastName, schoolId, gpa } = this.state;
-    const { student, schools, onDeleteStudent } = this.props;
 
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-      'div',
-      { className: 'update-student-grid-container' },
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      event.preventDefault();
+      onUpdateStudent(this.state);
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var student = this.props.student;
+
+      this.setState(student);
+
+      // form focus
+      var fields = ['field1', 'field2', 'field3'];
+      (0, _utils.formFocus)(fields);
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      var student = this.props.student;
+
+
+      if (prevProps !== this.props) {
+        this.setState(student);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var handleChange = this.handleChange,
+          handleSubmit = this.handleSubmit;
+      var _state = this.state,
+          firstName = _state.firstName,
+          lastName = _state.lastName,
+          schoolId = _state.schoolId,
+          gpa = _state.gpa;
+      var _props = this.props,
+          student = _props.student,
+          schools = _props.schools,
+          onDeleteStudent = _props.onDeleteStudent;
+
+
+      return _react2.default.createElement(
         'div',
-        { className: 'create-student-grid-item-1' },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'h2',
-          { className: 'sub-title-update' },
-          firstName,
-          ' ',
-          lastName
-        )
-      ),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-        'form',
-        { className: 'create-school-grid-item-2', onSubmit: handleSubmit },
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'First Name:',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            ' * required'
+        { className: 'update-student-grid-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'create-student-grid-item-1' },
+          _react2.default.createElement(
+            'h2',
+            { className: 'sub-title-update' },
+            firstName,
+            ' ',
+            lastName
           )
         ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field1', className: 'input-field', name: 'firstName', type: 'text', value: firstName, onChange: handleChange, required: true }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'Last Name:',
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'span',
-            { className: 'required-field' },
-            ' * required'
-          )
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field2', className: 'input-field', name: 'lastName', type: 'text', value: lastName, onChange: handleChange, required: true }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'GPA: '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('input', { id: 'field3', className: 'input-field-gpa', name: 'gpa', type: 'number', step: '0.10', min: '0.0', max: '4.0', value: gpa, onChange: handleChange }),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'label',
-          null,
-          'School: '
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'select',
-          { className: 'input-field-school', value: schoolId ? schoolId : '', name: 'schoolId', onChange: handleChange },
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'option',
-            { value: '' },
-            '(select your school)'
+        _react2.default.createElement('br', null),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'form',
+          { className: 'create-school-grid-item-2', onSubmit: handleSubmit },
+          _react2.default.createElement(
+            'label',
+            null,
+            'First Name:',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              ' * required'
+            )
           ),
-          schools.map(school => react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-            'option',
-            { key: school.id, value: school.id },
-            school.name
-          ))
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement('br', null),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'button',
-          { className: 'create-form-btn', type: 'submit' },
-          'Save'
-        ),
-        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-          'button',
-          { className: 'delete-form-btn', type: 'button', onClick: () => onDeleteStudent(student) },
-          'Delete'
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { id: 'field1', className: 'input-field', name: 'firstName', type: 'text', value: firstName, onChange: handleChange, required: true }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Last Name:',
+            _react2.default.createElement(
+              'span',
+              { className: 'required-field' },
+              ' * required'
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { id: 'field2', className: 'input-field', name: 'lastName', type: 'text', value: lastName, onChange: handleChange, required: true }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'GPA: '
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('input', { id: 'field3', className: 'input-field-gpa', name: 'gpa', type: 'number', step: '0.10', min: '0.0', max: '4.0', value: gpa, onChange: handleChange }),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'School: '
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'select',
+            { className: 'input-field-school', value: schoolId ? schoolId : '', name: 'schoolId', onChange: handleChange },
+            _react2.default.createElement(
+              'option',
+              { value: '' },
+              '(select your school)'
+            ),
+            schools.map(function (school) {
+              return _react2.default.createElement(
+                'option',
+                { key: school.id, value: school.id },
+                school.name
+              );
+            })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'button',
+            { className: 'create-form-btn', type: 'submit' },
+            'Save'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'delete-form-btn', type: 'button', onClick: function onClick() {
+                return onDeleteStudent(student);
+              } },
+            'Delete'
+          )
         )
-      )
-    );
-  }
+      );
+    }
+  }]);
 
-}
+  return UpdateStudent;
+}(_react.Component);
 
-const mapStateToProps = ({ students, schools }, { match }) => {
-  const id = +match.params.id;
+var mapStateToProps = function mapStateToProps(_ref, _ref2) {
+  var students = _ref.students,
+      schools = _ref.schools;
+  var match = _ref2.match;
+
+  var id = +match.params.id;
 
   return {
-    student: students.find(student => student.id === id),
-    schools
+    student: students.find(function (student) {
+      return student.id === id;
+    }),
+    schools: schools
   };
 };
 
-const mapDispatchToProps = (dispatch, { history }) => {
+var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref3) {
+  var history = _ref3.history;
+
 
   return {
-    onDeleteStudent: student => {
-      dispatch(Object(_reducers_students__WEBPACK_IMPORTED_MODULE_2__["deleteStudent"])(student)).then(() => history.push('/students')).catch(error => console.log(error));
+    onDeleteStudent: function onDeleteStudent(student) {
+      dispatch((0, _students.deleteStudent)(student)).then(function () {
+        return history.push('/students');
+      }).catch(function (error) {
+        return console.log(error);
+      });
     },
 
-    onUpdateStudent: student => {
+    onUpdateStudent: function onUpdateStudent(student) {
       if (student.schoolId === '') {
         student.schoolId = null;
       }
-      dispatch(Object(_reducers_students__WEBPACK_IMPORTED_MODULE_2__["updateStudent"])(student)).then(() => history.push('/students')).catch(error => console.log(error));
+      dispatch((0, _students.updateStudent)(student)).then(function () {
+        return history.push('/students');
+      }).catch(function (error) {
+        return console.log(error);
+      });
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(UpdateStudent));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(UpdateStudent);
 
 /***/ }),
 
@@ -31234,32 +31761,46 @@ const mapDispatchToProps = (dispatch, { history }) => {
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./src/store.js");
-/* harmony import */ var _Components_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/App */ "./src/Components/App.js");
 
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
+var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _store = __webpack_require__(/*! ./store */ "./src/store.js");
 
-const root = document.getElementById('root');
+var _store2 = _interopRequireDefault(_store);
 
-Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
-  react_redux__WEBPACK_IMPORTED_MODULE_2__["Provider"],
-  { store: _store__WEBPACK_IMPORTED_MODULE_3__["default"] },
-  react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_App__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+var _App = __webpack_require__(/*! ./Components/App */ "./src/Components/App.js");
+
+var _App2 = _interopRequireDefault(_App);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var obj = {
+  name: 'Andrew'
+};
+
+var obj1 = _extends({}, obj);
+
+console.log(obj1);
+
+var root = document.getElementById('root');
+
+(0, _reactDom.render)(_react2.default.createElement(
+  _reactRedux.Provider,
+  { store: _store2.default },
+  _react2.default.createElement(_App2.default, null)
 ), root);
 
 /***/ }),
@@ -31268,91 +31809,123 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 /*!*********************************!*\
   !*** ./src/reducers/schools.js ***!
   \*********************************/
-/*! exports provided: schoolsReducer, loadSchools, createSchool, DELETE_SCHOOL, deleteSchool, updateSchool */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "schoolsReducer", function() { return schoolsReducer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadSchools", function() { return loadSchools; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createSchool", function() { return createSchool; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_SCHOOL", function() { return DELETE_SCHOOL; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteSchool", function() { return deleteSchool; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateSchool", function() { return updateSchool; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updateSchool = exports.deleteSchool = exports.DELETE_SCHOOL = exports.createSchool = exports.loadSchools = exports.schoolsReducer = undefined;
+
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 // action constants
-const LOAD_SCHOOLS = 'LOAD_SCHOOLS';
-const CREATE_SCHOOL = 'CREATE_SCHOOL';
-const DELETE_SCHOOL = 'DELETE_SCHOOL';
-const UPDATE_SCHOOL = 'UPDATE_SCHOOL';
+var LOAD_SCHOOLS = 'LOAD_SCHOOLS';
+var CREATE_SCHOOL = 'CREATE_SCHOOL';
+var DELETE_SCHOOL = 'DELETE_SCHOOL';
+var UPDATE_SCHOOL = 'UPDATE_SCHOOL';
 
 // action creators
-const _loadSchools = schools => {
+var _loadSchools = function _loadSchools(schools) {
   return {
     type: LOAD_SCHOOLS,
-    schools
+    schools: schools
   };
 };
 
-const _createSchool = school => {
+var _createSchool = function _createSchool(school) {
   return {
     type: CREATE_SCHOOL,
-    school
+    school: school
   };
 };
 
-const _deleteSchool = school => {
+var _deleteSchool = function _deleteSchool(school) {
   return {
     type: DELETE_SCHOOL,
-    school
+    school: school
   };
 };
 
-const _updateSchool = school => {
+var _updateSchool = function _updateSchool(school) {
   return {
     type: UPDATE_SCHOOL,
-    school
+    school: school
   };
 };
 
 // thunks
-const loadSchools = () => {
-  return dispatch => {
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/schools').then(response => response.data).then(schools => dispatch(_loadSchools(schools))).catch(error => console.log(error));
+var loadSchools = function loadSchools() {
+  return function (dispatch) {
+    _axios2.default.get('/api/schools').then(function (response) {
+      return response.data;
+    }).then(function (schools) {
+      return dispatch(_loadSchools(schools));
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
-const createSchool = school => {
-  return dispatch => {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/schools', school).then(response => response.data).then(([school, wasCreated]) => {
+var createSchool = function createSchool(school) {
+  return function (dispatch) {
+    return _axios2.default.post('/api/schools', school).then(function (response) {
+      return response.data;
+    }).then(function (_ref) {
+      var _ref2 = _slicedToArray(_ref, 2),
+          school = _ref2[0],
+          wasCreated = _ref2[1];
+
       // only dispatch action creator (place newly created school in store)
       // if wasCreated was true (i.e. school is unique)
       if (wasCreated) {
         dispatch(_createSchool(school));
-      } else {
         return wasCreated;
       }
-    }).catch(error => console.log(error));
+
+      return wasCreated;
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
-const deleteSchool = school => {
-  return dispatch => {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(`api/schools/${school.id}`).then(() => dispatch(_deleteSchool(school))).catch(error => console.log(error));
+var deleteSchool = function deleteSchool(school) {
+  return function (dispatch) {
+    return _axios2.default.delete('api/schools/' + school.id).then(function () {
+      return dispatch(_deleteSchool(school));
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
-const updateSchool = school => {
-  return dispatch => {
-    return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put(`api/schools/${school.id}`, school).then(() => dispatch(_updateSchool(school))).catch(error => console.log(error));
+var updateSchool = function updateSchool(school) {
+  return function (dispatch) {
+    return _axios2.default.put('api/schools/' + school.id, school).then(function () {
+      return dispatch(_updateSchool(school));
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
 // reducers
-const schoolsReducer = (state = [], action) => {
+var schoolsReducer = function schoolsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
 
   switch (action.type) {
 
@@ -31361,23 +31934,34 @@ const schoolsReducer = (state = [], action) => {
       break;
 
     case CREATE_SCHOOL:
-      state = [...state, action.school];
+      state = [].concat(_toConsumableArray(state), [action.school]);
       break;
 
     case DELETE_SCHOOL:
-      state = state.filter(school => school.id !== action.school.id);
+      state = state.filter(function (school) {
+        return school.id !== action.school.id;
+      });
       break;
 
     case UPDATE_SCHOOL:
-      state = [...state];
-      state = [...state.filter(school => school.id !== action.school.id), action.school];
+      state = [].concat(_toConsumableArray(state));
+      state = [].concat(_toConsumableArray(state.filter(function (school) {
+        return school.id !== action.school.id;
+      })), [action.school]);
 
   }
 
-  return state.sort((a, b) => a.name > b.name);
+  return state.sort(function (a, b) {
+    return a.name > b.name;
+  });
 };
 
-
+exports.schoolsReducer = schoolsReducer;
+exports.loadSchools = loadSchools;
+exports.createSchool = createSchool;
+exports.DELETE_SCHOOL = DELETE_SCHOOL;
+exports.deleteSchool = deleteSchool;
+exports.updateSchool = updateSchool;
 
 /***/ }),
 
@@ -31385,85 +31969,112 @@ const schoolsReducer = (state = [], action) => {
 /*!**********************************!*\
   !*** ./src/reducers/students.js ***!
   \**********************************/
-/*! exports provided: studentsReducer, loadStudents, createStudent, deleteStudent, updateStudent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "studentsReducer", function() { return studentsReducer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadStudents", function() { return loadStudents; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStudent", function() { return createStudent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteStudent", function() { return deleteStudent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateStudent", function() { return updateStudent; });
-/* harmony import */ var _schools__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./schools */ "./src/reducers/schools.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.updateStudent = exports.deleteStudent = exports.createStudent = exports.loadStudents = exports.studentsReducer = undefined;
 
+var _schools = __webpack_require__(/*! ./schools */ "./src/reducers/schools.js");
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 // action constants
-const LOAD_STUDENTS = 'LOAD_STUDENTS';
-const CREATE_STUDENT = 'CREATE_STUDENT';
-const DELETE_STUDENT = 'DELETE_STUDENT';
-const UPDATE_STUDENT = 'UPDATE_STUDENT';
+var LOAD_STUDENTS = 'LOAD_STUDENTS';
+var CREATE_STUDENT = 'CREATE_STUDENT';
+var DELETE_STUDENT = 'DELETE_STUDENT';
+var UPDATE_STUDENT = 'UPDATE_STUDENT';
 
 // action creators
-const _loadStudents = students => {
+var _loadStudents = function _loadStudents(students) {
   return {
     type: LOAD_STUDENTS,
-    students
+    students: students
   };
 };
 
-const _createStudent = student => {
+var _createStudent = function _createStudent(student) {
   return {
     type: CREATE_STUDENT,
-    student
+    student: student
   };
 };
 
-const _deleteStudent = student => {
+var _deleteStudent = function _deleteStudent(student) {
   return {
     type: DELETE_STUDENT,
-    student
+    student: student
   };
 };
 
-const _updateStudent = student => {
+var _updateStudent = function _updateStudent(student) {
   return {
     type: UPDATE_STUDENT,
-    student
+    student: student
   };
 };
 
 // thunks
-const loadStudents = () => {
-  return dispatch => {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/api/students').then(response => response.data).then(students => dispatch(_loadStudents(students))).catch(error => console.log(error));
+var loadStudents = function loadStudents() {
+  return function (dispatch) {
+    _axios2.default.get('/api/students').then(function (response) {
+      return response.data;
+    }).then(function (students) {
+      return dispatch(_loadStudents(students));
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
-const createStudent = student => {
-  return dispatch => {
-    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/api/students', student).then(response => response.data).then(student => dispatch(_createStudent(student))).catch(error => console.log(error));
+var createStudent = function createStudent(student) {
+  return function (dispatch) {
+    return _axios2.default.post('/api/students', student).then(function (response) {
+      return response.data;
+    }).then(function (student) {
+      return dispatch(_createStudent(student));
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
-const deleteStudent = student => {
-  return dispatch => {
-    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.delete(`/api/students/${student.id}`).then(() => dispatch(_deleteStudent(student))).catch(error => next(error));
+var deleteStudent = function deleteStudent(student) {
+  return function (dispatch) {
+    return _axios2.default.delete('/api/students/' + student.id).then(function () {
+      return dispatch(_deleteStudent(student));
+    }).catch(function (error) {
+      return next(error);
+    });
   };
 };
 
-const updateStudent = student => {
-  return dispatch => {
-    return axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(`/api/students/${student.id}`, student).then(() => dispatch(_updateStudent(student))).catch(error => console.log(error));
+var updateStudent = function updateStudent(student) {
+  return function (dispatch) {
+    return _axios2.default.put('/api/students/' + student.id, student).then(function () {
+      return dispatch(_updateStudent(student));
+    }).catch(function (error) {
+      return console.log(error);
+    });
   };
 };
 
 // reducer
-const studentsReducer = (state = [], action) => {
+var studentsReducer = function studentsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
 
   switch (action.type) {
 
@@ -31472,16 +32083,18 @@ const studentsReducer = (state = [], action) => {
       break;
 
     case CREATE_STUDENT:
-      state = [...state, action.student];
+      state = [].concat(_toConsumableArray(state), [action.student]);
       break;
 
     case DELETE_STUDENT:
-      state = state.filter(student => student.id !== action.student.id);
+      state = state.filter(function (student) {
+        return student.id !== action.student.id;
+      });
       break;
 
-    case _schools__WEBPACK_IMPORTED_MODULE_0__["DELETE_SCHOOL"]:
-      state = [...state];
-      state.forEach(student => {
+    case _schools.DELETE_SCHOOL:
+      state = [].concat(_toConsumableArray(state));
+      state.forEach(function (student) {
         if (student.schoolId == action.school.id) {
           student.schoolId = null;
         }
@@ -31489,15 +32102,23 @@ const studentsReducer = (state = [], action) => {
       break;
 
     case UPDATE_STUDENT:
-      state = [...state];
-      state = [...state.filter(student => student.id !== action.student.id), action.student];
+      state = [].concat(_toConsumableArray(state));
+      state = [].concat(_toConsumableArray(state.filter(function (student) {
+        return student.id !== action.student.id;
+      })), [action.student]);
       break;
   }
 
-  return state.sort((a, b) => a.firstName > b.firstName);
+  return state.sort(function (a, b) {
+    return a.firstName > b.firstName;
+  });
 };
 
-
+exports.studentsReducer = studentsReducer;
+exports.loadStudents = loadStudents;
+exports.createStudent = createStudent;
+exports.deleteStudent = deleteStudent;
+exports.updateStudent = updateStudent;
 
 /***/ }),
 
@@ -31505,23 +32126,29 @@ const studentsReducer = (state = [], action) => {
 /*!**********************!*\
   !*** ./src/store.js ***!
   \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
-/* harmony import */ var _reducers_schools__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./reducers/schools */ "./src/reducers/schools.js");
-/* harmony import */ var _reducers_students__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./reducers/students */ "./src/reducers/students.js");
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
+var _redux = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 
+var _reduxLogger = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
 
+var _reduxThunk = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
 
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+var _schools = __webpack_require__(/*! ./reducers/schools */ "./src/reducers/schools.js");
+
+var _students = __webpack_require__(/*! ./reducers/students */ "./src/reducers/students.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // ### application global state data structure ### 
 // {
@@ -31529,14 +32156,14 @@ __webpack_require__.r(__webpack_exports__);
 //   students: []
 // }
 
-const reducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  schools: _reducers_schools__WEBPACK_IMPORTED_MODULE_3__["schoolsReducer"],
-  students: _reducers_students__WEBPACK_IMPORTED_MODULE_4__["studentsReducer"]
+var reducer = (0, _redux.combineReducers)({
+  schools: _schools.schoolsReducer,
+  students: _students.studentsReducer
 });
 
-const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_2__["default"], redux_logger__WEBPACK_IMPORTED_MODULE_1__["logger"]));
+var store = (0, _redux.createStore)(reducer, (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger.logger));
 
-/* harmony default export */ __webpack_exports__["default"] = (store);
+exports.default = store;
 
 /***/ }),
 
@@ -31544,29 +32171,36 @@ const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(reducer,
 /*!**********************!*\
   !*** ./src/utils.js ***!
   \**********************/
-/*! exports provided: stateAbbrev, formFocus */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stateAbbrev", function() { return stateAbbrev; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formFocus", function() { return formFocus; });
-const stateAbbrev = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var stateAbbrev = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
 
 // form input field focus
-const formFocus = fields => {
+var formFocus = function formFocus(fields) {
 
-  fields.forEach(field => {
+  fields.forEach(function (field) {
 
-    const _field = document.getElementById(field);
+    var _field = document.getElementById(field);
 
-    _field.addEventListener('focus', () => _field.style.backgroundColor = "yellow");
+    _field.addEventListener('focus', function () {
+      return _field.style.backgroundColor = "yellow";
+    });
 
-    _field.addEventListener('blur', () => _field.style.backgroundColor = "white");
+    _field.addEventListener('blur', function () {
+      return _field.style.backgroundColor = "white";
+    });
   });
 };
 
-
+exports.stateAbbrev = stateAbbrev;
+exports.formFocus = formFocus;
 
 /***/ })
 

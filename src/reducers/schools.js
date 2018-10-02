@@ -54,10 +54,10 @@ const createSchool = (school) => {
         // if wasCreated was true (i.e. school is unique)
         if(wasCreated) {
           dispatch(_createSchool(school))
-        }
-        else {
           return wasCreated;
         }
+        
+        return wasCreated;
       })
       .catch(error => console.log(error))
   }

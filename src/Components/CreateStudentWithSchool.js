@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ManageStudents_Create = ({ schoolId, schoolName }) => {
+const CreateStudentWithSchool = ({ schoolId, schoolName }) => {
 
   return (
 
@@ -21,4 +21,4 @@ const ManageStudents_Create = ({ schoolId, schoolName }) => {
 
 }
 
-export default ManageStudents_Create;
+export default CreateStudentWithSchool;

@@ -42,31 +42,31 @@ const syncAndSeed = () => {
     .then(([baruch, harvard, mit]) => {
       Promise.all([
         Student.create({
-          firstName: 'Jean-Luc',
-          lastName: 'Picard',
+          firstName: 'George',
+          lastName: 'Washington',
           gpa: 3.5,
           schoolId: baruch.id
         }),
         Student.create({
-          firstName: 'William T.',
-          lastName: 'Riker',
+          firstName: 'John',
+          lastName: 'Adams',
           gpa: 3.2,
           schoolId: harvard.id
         }),
         Student.create({
-          firstName: 'Geordi',
-          lastName: 'La Forge',
+          firstName: 'Thomas',
+          lastName: 'Jefferson',
           gpa: 3.9,
           schoolId: mit.id
         }),
         Student.create({
-          firstName: 'Beverly',
-          lastName: 'Crusher',
+          firstName: 'Benjamin',
+          lastName: 'Franklin',
           gpa: 4.0
         }),
         Student.create({
-          firstName: 'Reginald',
-          lastName: 'Barclay',
+          firstName: 'James',
+          lastName: 'Madison',
           gpa: 4.0,
           schoolId: mit.id
         }),

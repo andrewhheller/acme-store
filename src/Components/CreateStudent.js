@@ -29,7 +29,6 @@ class CreateStudent extends Component {
 
   componentDidMount() {
     const { schoolId } = this.props;
-    console.log(schoolId)
     this.setState({ schoolId });
 
     // form focus
@@ -121,6 +120,7 @@ class CreateStudent extends Component {
                 value={schoolId}
                 onChange={handleChange}
               >
+
                 <option value="">(select school)</option>
                 {
                   schools.map(school => <option key={school.id} value={school.id}>{school.name}</option>)
