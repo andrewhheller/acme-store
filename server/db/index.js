@@ -7,6 +7,7 @@ const Student = require('./Student');
 Student.belongsTo(School);
 School.hasMany(Student);
 
+
 // sync and seed
 const syncAndSeed = () => {
 
@@ -75,6 +76,8 @@ const syncAndSeed = () => {
     .catch(error => console.log(error));
 
 }
+
+
 
 module.exports = {
   syncAndSeed,

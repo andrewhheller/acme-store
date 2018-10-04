@@ -102,7 +102,7 @@ class CreateStudent extends Component {
               className="input-field-gpa"
               name="gpa"
               type="number"
-              step="0.1"
+              // step="0.1"
               min="0.0"
               max="4.0"
               placeholder="0.0"

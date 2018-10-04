@@ -30209,9 +30209,9 @@ var CreateStudent = function (_Component) {
             id: 'field3',
             className: 'input-field-gpa',
             name: 'gpa',
-            type: 'number',
-            step: '0.1',
-            min: '0.0',
+            type: 'number'
+            // step="0.1"
+            , min: '0.0',
             max: '4.0',
             placeholder: '0.0',
             value: gpa,
@@ -31767,8 +31767,6 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 "use strict";
 
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -31787,13 +31785,13 @@ var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var obj = {
-  name: 'Andrew'
-};
+// const obj = {
+//   name: 'Andrew'
+// }
 
-var obj1 = _extends({}, obj);
+// const obj1 = {...obj}
 
-console.log(obj1);
+// console.log(obj1)
 
 var root = document.getElementById('root');
 
