@@ -31,8 +31,10 @@ const Student = conn.define('student', {
 
 // transform first and last name into Capital Case
 Student.beforeValidate(student => {
-  student.firstName = student.firstName[0].toUpperCase() + student.firstName.slice(1);
-  student.lastName = student.lastName[0].toUpperCase() + student.lastName.slice(1);
+  if(student.firstName || student.lastName) {
+    student.firstName = student.firstName[0].toUpperCase() + student.firstName.slice(1);
+    student.lastName = student.lastName[0].toUpperCase() + student.lastName.slice(1);
+  }
 })
 
 

@@ -11,7 +11,7 @@ School.hasMany(Student);
 // sync and seed
 const syncAndSeed = () => {
 
-  conn.sync({ force: true } )
+  return conn.sync({ force: true } )
     .then(() => {
       return Promise.all([
         School.create({
@@ -41,7 +41,7 @@ const syncAndSeed = () => {
       ])
     })
     .then(([baruch, harvard, mit]) => {
-      Promise.all([
+      return Promise.all([
         Student.create({
           firstName: 'George',
           lastName: 'Washington',
