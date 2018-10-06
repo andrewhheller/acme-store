@@ -6,14 +6,8 @@ import store from './store';
 
 import App from './Components/App';
 
+console.log(store.getState());
 
-// const obj = {
-//   name: 'Andrew'
-// }
-
-// const obj1 = {...obj}
-
-// console.log(obj1)
 
 const root = document.getElementById('root');
 

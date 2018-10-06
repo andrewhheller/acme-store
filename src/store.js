@@ -2,20 +2,21 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger'
 import thunk from 'redux-thunk';
 
-import { schoolsReducer } from './reducers/schools';
-import { studentsReducer } from './reducers/students';
+import { productsReducer } from './reducers/products';
+import { cartReducer } from './reducers/orders';
+// import { studentsReducer } from './reducers/students';
 
 
 
 // ### application global state data structure ### 
 // {
-//   schools: [],
-//   students: []
+//   products: [],
+//   cart: []
 // }
 
 const reducer = combineReducers({
-  schools: schoolsReducer,
-  students: studentsReducer
+  cart: cartReducer,
+  products: productsReducer
 })
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));

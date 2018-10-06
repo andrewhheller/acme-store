@@ -3,8 +3,9 @@ import React from 'react';
 const Header = () => {
   return(
 
-    <div className="header">
-      <h1>ACME Schools Dashboard</h1>
+    <div>
+      <h3>() Items Sold</h3>
+      <button>Reset</button>
     </div>
 
 )

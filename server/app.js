@@ -4,16 +4,16 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const apiSchools = require('./api/schools');
-const apiStudents = require('./api/students');
+const apiProducts = require('./api/products');
+const apiOrders = require('./api/orders');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/dist', express.static(path.join(__dirname, '..', 'dist')));
 
-app.use('/api/schools', apiSchools);
-app.use('/api/students', apiStudents);
+app.use('/api/products', apiProducts);
+app.use('/api/orders', apiOrders);
 
 
 

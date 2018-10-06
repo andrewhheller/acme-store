@@ -1,77 +1,52 @@
 const conn = require('./conn');
-const School = require('./School');
-const Student = require('./Student');
+const Product = require('./Product');
+const Order = require('./Order');
+const LineItem = require('./LineItem');
 
 
 // associations
-Student.belongsTo(School);
-School.hasMany(Student);
+LineItem.belongsTo(Product);
+LineItem.belongsTo(Order);
+
+Order.hasMany(LineItem);
 
 
 // sync and seed
 const syncAndSeed = () => {
+  let widget1, widget2, widget3;
+  let order1;
+  let lineItem1, lineItem2, lineItem3;
 
   return conn.sync({ force: true } )
     .then(() => {
       return Promise.all([
-        School.create({
-          name: 'Baruch College',
-          description: 'business school',
-          street: '55 Lexington Ave.',
-          city: 'New York',
-          state: 'NY',
-          zip: '10010'
+        Product.create({
+          name: 'widget1'
         }),
-        School.create({
-          name: 'Harvard University',
-          description: 'law school',
-          street: 'Smith Campus Center',
-          city: 'Cambridge',
-          state: 'MA',
-          zip: '01231'
+        Product.create({
+          name: 'widget2'
         }),
-        School.create({
-          name: 'MIT',
-          description: 'engineering school',
-          street: '77 Massachusetts Ave.',
-          city: 'Cambridge',
-          state: 'MA',
-          zip: '02132'
+        Product.create({
+          name: 'widget3'
         })
       ])
     })
-    .then(([baruch, harvard, mit]) => {
-      return Promise.all([
-        Student.create({
-          firstName: 'George',
-          lastName: 'Washington',
-          gpa: 3.5,
-          schoolId: baruch.id
-        }),
-        Student.create({
-          firstName: 'John',
-          lastName: 'Adams',
-          gpa: 3.2,
-          schoolId: harvard.id
-        }),
-        Student.create({
-          firstName: 'Thomas',
-          lastName: 'Jefferson',
-          gpa: 3.9,
-          schoolId: mit.id
-        }),
-        Student.create({
-          firstName: 'Benjamin',
-          lastName: 'Franklin',
-          gpa: 4.0
-        }),
-        Student.create({
-          firstName: 'James',
-          lastName: 'Madison',
-          gpa: 4.0,
-          schoolId: mit.id
-        }),
-      ])
+    .then( async ([widget1, widget2, widget3]) => {
+      order1 = await Order.create();
+      lineItem1 = await LineItem.create({
+          orderId: order1.id,
+          productId: widget1.id
+        })
+      lineItem2 = await LineItem.create({
+        orderId: order1.id,
+        productId: widget2.id,
+        quantity: 3
+      })
+      lineItem3 = await LineItem.create({
+        orderId: order1.id,
+        productId: widget3.id,
+        quantity: 5
+      })
     })
     .catch(error => console.log(error));
 
@@ -82,7 +57,8 @@ const syncAndSeed = () => {
 module.exports = {
   syncAndSeed,
   models: {
-    School,
-    Student
+    Product,
+    Order,
+    LineItem
   }
 }

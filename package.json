@@ -4,11 +4,11 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "test": "DATABASE_URL=postgres://localhost/acme_schools_test nodemon ./node_modules/mocha/bin/mocha",
+    "test": "DATABASE_URL=postgres://localhost/acme_store_test nodemon ./node_modules/mocha/bin/mocha",
     "postinstall": "npm run webpack",
     "webpack": "webpack",
     "build": "npm run webpack -- --watch --mode=development",
-    "start:dev": "npm run build & DATABASE_URL=postgres://localhost/acme_schools_dev nodemon server/server.js --ignore dist --ignore src",
+    "start:dev": "npm run build & DATABASE_URL=postgres://localhost/acme_store nodemon server/server.js --ignore dist --ignore src",
     "start": "node server/server.js"
   },
   "keywords": [],
