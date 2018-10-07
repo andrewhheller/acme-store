@@ -1,17 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { _addProduct, _removeProduct } from '../reducers/orders';
+import { _addProduct, _removeProduct } from '../reducers/cart';
 
-const CartLineItem = ({ product, count, onAddProduct, onRemoveProduct }) => {
+const CartLineItem = ({ cart, product, onAddProduct, onRemoveProduct }) => {
+
+  const count = () => {
+    return cart.find(item => item.id === product.id)
+      ? cart.find(item => item.id === product.id).quantity
+      : 0
+  }
 
     return (
       <li>
         {product.name}
         <br />
-        ({count}) ordered
+        ({count()}) ordered
         <br />
-        <button disabled={!count} onClick={() => onRemoveProduct(product)}>-</button>
+        <button disabled={!count()} onClick={() => onRemoveProduct(product)}>-</button>
         <button onClick={() => onAddProduct(product)}>+</button>
         <br />
         <br />
@@ -21,9 +27,10 @@ const CartLineItem = ({ product, count, onAddProduct, onRemoveProduct }) => {
 }
 
 const mapStateToProps = ({ cart }, { product }) => {
+
   return {
     product,
-    count: cart.filter(item => item.id === product.id).length
+    cart
   }
 }
 

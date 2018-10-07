@@ -31,23 +31,27 @@ const syncAndSeed = () => {
         })
       ])
     })
-    .then( async ([widget1, widget2, widget3]) => {
-      order1 = await Order.create();
-      lineItem1 = await LineItem.create({
-          orderId: order1.id,
-          productId: widget1.id
-        })
-      lineItem2 = await LineItem.create({
-        orderId: order1.id,
-        productId: widget2.id,
-        quantity: 3
-      })
-      lineItem3 = await LineItem.create({
-        orderId: order1.id,
-        productId: widget3.id,
-        quantity: 5
-      })
-    })
+    // .then( async ([widget1, widget2, widget3]) => {
+    //   order1 = await Order.create();
+    //   lineItem1 = await LineItem.create({
+    //       orderId: order1.id,
+    //       productId: widget1.id
+    //     })
+    //   lineItem2 = await LineItem.create({
+    //     orderId: order1.id,
+    //     productId: widget2.id,
+    //     quantity: 3
+    //   })
+    //   lineItem3 = await LineItem.create({
+    //     orderId: order1.id,
+    //     productId: widget3.id,
+    //     quantity: 5
+    //   })
+    //   lineItem4 = await LineItem.create({
+    //     orderId: order1.id,
+    //     productId: widget1.id
+    //   })
+    // })
     .catch(error => console.log(error));
 
 }

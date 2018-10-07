@@ -6,7 +6,6 @@ import store from './store';
 
 import App from './Components/App';
 
-console.log(store.getState());
 
 
 const root = document.getElementById('root');

@@ -7,6 +7,7 @@ import { loadProducts } from '../reducers/products';
 import Nav from './Nav';
 import Header from './Header';
 import Cart from './Cart';
+import Orders from './Orders';
 
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route path="/cart" component={Cart} />
+            <Route path="/orders" component={Orders} />
           </Switch>
         </div>
       </Router>

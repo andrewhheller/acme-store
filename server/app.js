@@ -8,7 +8,6 @@ const apiProducts = require('./api/products');
 const apiOrders = require('./api/orders');
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/dist', express.static(path.join(__dirname, '..', 'dist')));
 

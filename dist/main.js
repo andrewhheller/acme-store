@@ -29614,6 +29614,10 @@ var _Cart = __webpack_require__(/*! ./Cart */ "./src/Components/Cart.js");
 
 var _Cart2 = _interopRequireDefault(_Cart);
 
+var _Orders = __webpack_require__(/*! ./Orders */ "./src/Components/Orders.js");
+
+var _Orders2 = _interopRequireDefault(_Orders);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29650,7 +29654,8 @@ var App = function (_Component) {
           _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/cart', component: _Cart2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/cart', component: _Cart2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/orders', component: _Orders2.default })
           )
         )
       );
@@ -29688,10 +29693,14 @@ var _CartLineItem = __webpack_require__(/*! ./CartLineItem */ "./src/Components/
 
 var _CartLineItem2 = _interopRequireDefault(_CartLineItem);
 
+var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Cart = function Cart(_ref) {
-  var products = _ref.products;
+  var products = _ref.products,
+      cart = _ref.cart,
+      onCreateOrder = _ref.onCreateOrder;
 
 
   return _react2.default.createElement(
@@ -29708,20 +29717,42 @@ var Cart = function Cart(_ref) {
       products.map(function (product) {
         return _react2.default.createElement(_CartLineItem2.default, { key: product.id, product: product });
       })
+    ),
+    _react2.default.createElement(
+      'button',
+      { disabled: !cart.length, onClick: function onClick() {
+          return onCreateOrder(cart, products);
+        } },
+      'Create Order'
     )
   );
 };
 
 var mapStateToProps = function mapStateToProps(_ref2) {
-  var products = _ref2.products;
+  var products = _ref2.products,
+      cart = _ref2.cart;
 
 
   return {
-    products: products
+    products: products,
+    cart: cart
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Cart);
+var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref3) {
+  var history = _ref3.history;
+
+
+  return {
+    onCreateOrder: function onCreateOrder(cart, products) {
+      dispatch((0, _orders.createOrder)(cart, products)).then(function () {
+        return history.push('/orders');
+      });
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Cart);
 
 /***/ }),
 
@@ -29745,16 +29776,24 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
-var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
+var _cart = __webpack_require__(/*! ../reducers/cart */ "./src/reducers/cart.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var CartLineItem = function CartLineItem(_ref) {
-  var product = _ref.product,
-      count = _ref.count,
+  var cart = _ref.cart,
+      product = _ref.product,
       onAddProduct = _ref.onAddProduct,
       onRemoveProduct = _ref.onRemoveProduct;
 
+
+  var count = function count() {
+    return cart.find(function (item) {
+      return item.id === product.id;
+    }) ? cart.find(function (item) {
+      return item.id === product.id;
+    }).quantity : 0;
+  };
 
   return _react2.default.createElement(
     'li',
@@ -29762,12 +29801,12 @@ var CartLineItem = function CartLineItem(_ref) {
     product.name,
     _react2.default.createElement('br', null),
     '(',
-    count,
+    count(),
     ') ordered',
     _react2.default.createElement('br', null),
     _react2.default.createElement(
       'button',
-      { disabled: !count, onClick: function onClick() {
+      { disabled: !count(), onClick: function onClick() {
           return onRemoveProduct(product);
         } },
       '-'
@@ -29788,21 +29827,20 @@ var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
   var cart = _ref2.cart;
   var product = _ref3.product;
 
+
   return {
     product: product,
-    count: cart.filter(function (item) {
-      return item.id === product.id;
-    }).length
+    cart: cart
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     onAddProduct: function onAddProduct(product) {
-      return dispatch((0, _orders._addProduct)(product));
+      return dispatch((0, _cart._addProduct)(product));
     },
     onRemoveProduct: function onRemoveProduct(product) {
-      return dispatch((0, _orders._removeProduct)(product));
+      return dispatch((0, _cart._removeProduct)(product));
     }
   };
 };
@@ -29829,26 +29867,72 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
+var Header = function Header(_ref) {
+  var products = _ref.products,
+      totalSales = _ref.totalSales,
+      onResetApp = _ref.onResetApp;
+
   return _react2.default.createElement(
     'div',
     null,
     _react2.default.createElement(
       'h3',
       null,
-      '() Items Sold'
+      '(',
+      totalSales,
+      ') Items Sold'
     ),
     _react2.default.createElement(
       'button',
-      null,
+      { onClick: function onClick() {
+          return onResetApp(products);
+        } },
       'Reset'
     )
   );
 };
 
-exports.default = Header;
+var totalSales = function totalSales(orders) {
+
+  // reduce on complete order array (array of order objects)
+  return orders.reduce(function (total, order) {
+
+    // for each product in products array within order
+    // add quantity to total
+    order.lineItems.forEach(function (lineItem) {
+      return total += lineItem.quantity;
+    });
+    return total;
+
+    // start with 0 as default
+  }, 0);
+};
+
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var orders = _ref2.orders,
+      products = _ref2.products;
+
+  return {
+    totalSales: totalSales(orders),
+    products: products
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    onResetApp: function onResetApp(products) {
+      return dispatch((0, _orders.resetApp)(products));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Header);
 
 /***/ }),
 
@@ -29876,15 +29960,22 @@ var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-r
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Nav = function Nav() {
+var Nav = function Nav(_ref) {
+  var cartCount = _ref.cartCount,
+      orderCount = _ref.orderCount;
+
 
   return _react2.default.createElement(
     'ul',
     null,
     _react2.default.createElement(
-      'li',
-      null,
-      'Home'
+      _reactRouterDom.Link,
+      { to: '/' },
+      _react2.default.createElement(
+        'li',
+        null,
+        'Home'
+      )
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
@@ -29892,18 +29983,170 @@ var Nav = function Nav() {
       _react2.default.createElement(
         'li',
         null,
-        'Cart'
+        'Cart (',
+        cartCount,
+        ')'
       )
     ),
     _react2.default.createElement(
-      'li',
-      null,
-      'Orders'
+      _reactRouterDom.Link,
+      { to: '/orders' },
+      _react2.default.createElement(
+        'li',
+        null,
+        'Orders (',
+        orderCount,
+        ')'
+      )
     )
   );
 };
 
-exports.default = Nav;
+var cartCount = function cartCount(cart) {
+  return cart.reduce(function (count, product) {
+    if (product.quantity) {
+      count += product.quantity;
+    }
+    return count;
+  }, 0);
+};
+
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var cart = _ref2.cart,
+      orders = _ref2.orders;
+
+
+  return {
+    cartCount: cartCount(cart),
+    orderCount: orders.length
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Nav);
+
+/***/ }),
+
+/***/ "./src/Components/Order.js":
+/*!*********************************!*\
+  !*** ./src/Components/Order.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Order = function Order(_ref) {
+  var order = _ref.order,
+      products = _ref.products;
+
+
+  var findProductName = function findProductName(products, id) {
+    return products.find(function (product) {
+      return product.id === id;
+    }).name;
+  };
+
+  return _react2.default.createElement(
+    'div',
+    { key: order.id },
+    _react2.default.createElement(
+      'p',
+      null,
+      '#',
+      order.id
+    ),
+    order.lineItems.map(function (lineItem) {
+      return _react2.default.createElement(
+        'ul',
+        { key: lineItem.id },
+        _react2.default.createElement(
+          'li',
+          null,
+          findProductName(products, lineItem.productId)
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          'quantity: ',
+          lineItem.quantity
+        )
+      );
+    })
+  );
+};
+
+exports.default = Order;
+
+/***/ }),
+
+/***/ "./src/Components/Orders.js":
+/*!**********************************!*\
+  !*** ./src/Components/Orders.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _Order = __webpack_require__(/*! ./Order */ "./src/Components/Order.js");
+
+var _Order2 = _interopRequireDefault(_Order);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Orders = function Orders(_ref) {
+  var orders = _ref.orders,
+      products = _ref.products;
+
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h1',
+      null,
+      'Current Orders'
+    ),
+    orders.map(function (order) {
+      return _react2.default.createElement(_Order2.default, { key: order.id, products: products, order: order });
+    })
+  );
+};
+
+var mapStateToProps = function mapStateToProps(_ref2) {
+  var orders = _ref2.orders,
+      products = _ref2.products;
+
+
+  return {
+    orders: orders,
+    products: products
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(Orders);
 
 /***/ }),
 
@@ -29935,8 +30178,6 @@ var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_store2.default.getState());
-
 var root = document.getElementById('root');
 
 (0, _reactDom.render)(_react2.default.createElement(
@@ -29947,10 +30188,10 @@ var root = document.getElementById('root');
 
 /***/ }),
 
-/***/ "./src/reducers/orders.js":
-/*!********************************!*\
-  !*** ./src/reducers/orders.js ***!
-  \********************************/
+/***/ "./src/reducers/cart.js":
+/*!******************************!*\
+  !*** ./src/reducers/cart.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29960,19 +30201,16 @@ var root = document.getElementById('root');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.cartReducer = exports._removeProduct = exports._addProduct = undefined;
+exports.cartReducer = exports._clearCart = exports._removeProduct = exports._addProduct = undefined;
 
-var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _orders = __webpack_require__(/*! ./orders */ "./src/reducers/orders.js");
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 // action constants
 var ADD_PRODUCT = 'ADD_PRODUCT';
 var REMOVE_PRODUCT = 'REMOVE_PRODUCT';
+var CLEAR_CART = 'CLEAR_CART';
 
 // action creators
 var _addProduct = function _addProduct(product) {
@@ -29989,8 +30227,27 @@ var _removeProduct = function _removeProduct(product) {
   };
 };
 
-// thunks
+var _clearCart = function _clearCart() {
+  return {
+    type: CLEAR_CART
+  };
+};
 
+var addQuantity = function addQuantity(product) {
+
+  if (product.quantity) {
+    product.quantity++;
+  } else {
+    product.quantity = 1;
+  }
+
+  return product;
+};
+
+var removeQuantity = function removeQuantity(product) {
+  product.quantity--;
+  return product;
+};
 
 // reducer
 var cartReducer = function cartReducer() {
@@ -30001,26 +30258,176 @@ var cartReducer = function cartReducer() {
   switch (action.type) {
 
     case ADD_PRODUCT:
-      state = [].concat(_toConsumableArray(state), [action.product]);
+      state = [].concat(_toConsumableArray(state.filter(function (product) {
+        return product.id !== action.product.id;
+      })), [addQuantity(action.product)]);
       break;
 
     case REMOVE_PRODUCT:
       // const firstMatch = state.find(product => product.id === action.product.id)
       // state = state.filter(item => item !== firstMatch)
-      var firstMatchIndex = state.indexOf(action.product);
-      state = state.filter(function (product, idx) {
-        return idx !== firstMatchIndex;
-      });
+      // const firstMatchIndex = state.indexOf(action.product);
+      // state = {...state, products: [...state.products.filter((product, idx) => idx !== firstMatchIndex)] }
+      // state = state.filter((product, idx) => idx !== firstMatchIndex)
+      state = [].concat(_toConsumableArray(state.filter(function (product) {
+        return product.id !== action.product.id;
+      })), [removeQuantity(action.product)]);
       break;
 
+    case CLEAR_CART:
+    case _orders.RESET_APP:
+      state = [];
+      break;
+
+  }
+
+  return state.filter(function (item) {
+    return item.quantity !== 0;
+  });
+};
+
+exports._addProduct = _addProduct;
+exports._removeProduct = _removeProduct;
+exports._clearCart = _clearCart;
+exports.cartReducer = cartReducer;
+
+/***/ }),
+
+/***/ "./src/reducers/orders.js":
+/*!********************************!*\
+  !*** ./src/reducers/orders.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.resetApp = exports.RESET_APP = exports.createOrder = exports.getOrders = exports.orderReducer = undefined;
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
+var _cart = __webpack_require__(/*! ./cart */ "./src/reducers/cart.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// action constants
+var GET_ORDERS = 'GET_ORDERS';
+var RESET_APP = 'RESET_APP';
+
+// action creators
+var _getOrders = function _getOrders(orders) {
+  return {
+    type: GET_ORDERS,
+    orders: orders
+  };
+};
+
+var _resetApp = function _resetApp() {
+  return {
+    type: RESET_APP
+  };
+};
+
+// thunks
+var getOrders = function getOrders() {
+  return function (dispatch) {
+    _axios2.default.get('/api/orders').then(function (response) {
+      return response.data;
+    }).then(function (orders) {
+      return dispatch(_getOrders(orders));
+    }).catch(function (error) {
+      return console.log(error);
+    });
+  };
+};
+
+var resetApp = function resetApp(products) {
+  return function (dispatch) {
+    dispatch(_resetApp());
+    (0, _utils.removeQuantity)(products);
+  };
+};
+
+var createOrder = function createOrder(cart, products) {
+
+  return function (dispatch) {
+
+    // create a new order in database
+    return _axios2.default.post('/api/orders')
+
+    // data from response will be used to determine orderId
+    .then(function (response) {
+      return response.data;
+    }).then(function (order) {
+
+      // for each product in cart
+      cart.forEach(function (item) {
+
+        // create an object to send to database,
+        // that includes productId and quantity
+        var lineItem = { productId: item.id, quantity: item.quantity
+
+          // POST object to lineItems table
+        };_axios2.default.post('/api/orders/' + order.id + '/lineItems/', lineItem);
+      });
+    })
+
+    // get all orders from the DB
+    .then(function () {
+      return dispatch(getOrders());
+    })
+
+    // reload products to wipe out quantity key (UGH)
+    // .then(() => dispatch(loadProducts()))
+    .then(function () {
+      return (0, _utils.removeQuantity)(products);
+    })
+
+    // clear the cart
+    .then(function () {
+      return dispatch((0, _cart._clearCart)());
+    })
+
+    // catch any errors
+    .catch(function (error) {
+      return console.log(error);
+    });
+  };
+};
+
+// reducer
+var orderReducer = function orderReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var action = arguments[1];
+
+
+  switch (action.type) {
+
+    case GET_ORDERS:
+      state = action.orders;
+      break;
+
+    case RESET_APP:
+      state = [];
+      break;
   }
 
   return state;
 };
 
-exports._addProduct = _addProduct;
-exports._removeProduct = _removeProduct;
-exports.cartReducer = cartReducer;
+exports.orderReducer = orderReducer;
+exports.getOrders = getOrders;
+exports.createOrder = createOrder;
+exports.RESET_APP = RESET_APP;
+exports.resetApp = resetApp;
 
 /***/ }),
 
@@ -30080,7 +30487,9 @@ var productsReducer = function productsReducer() {
       state = action.products;
   }
 
-  return state;
+  return state.sort(function (a, b) {
+    return a.name > b.name;
+  });
 };
 
 exports.productsReducer = productsReducer;
@@ -30112,27 +30521,71 @@ var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
 var _products = __webpack_require__(/*! ./reducers/products */ "./src/reducers/products.js");
 
+var _cart = __webpack_require__(/*! ./reducers/cart */ "./src/reducers/cart.js");
+
 var _orders = __webpack_require__(/*! ./reducers/orders */ "./src/reducers/orders.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { studentsReducer } from './reducers/students';
-
-
 // ### application global state data structure ### 
 // {
-//   products: [],
-//   cart: []
+//   products: [ { id: 1, name: 'widget1' },
+//               { id: 2, name: 'widget2' },
+//               { id: 3, name: 'widget3' },
+//              ],
+//   cart:     [ { id: 1, name: 'widget1', quantity: 1 },
+//               { id: 2, name: 'widget2', quantity: 3 },
+//               { id: 3, name: 'widget3', quantity: 5 },
+//              ],
+//   orders:   [
+//               {
+//                 orderId: '',
+//                 products: [
+//                   { id: 1, name: 'widget1', quantity: 1 },
+//                   { id: 2, name: 'widget2', quantity: 3 },
+//                   { id: 3, name: 'widget3', quantity: 5 },
+//                 ],
+//               }
+//              ]
 // }
 
 var reducer = (0, _redux.combineReducers)({
-  cart: _orders.cartReducer,
-  products: _products.productsReducer
+  cart: _cart.cartReducer,
+  products: _products.productsReducer,
+  orders: _orders.orderReducer
 });
 
 var store = (0, _redux.createStore)(reducer, (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger.logger));
 
 exports.default = store;
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// a product object from the products array is added to the cart
+// when quantity key is added in helper function for cart reducer,
+// it adds a quantity key for that object with points to the product object,
+// thus adding a quantity key in the products arrary! (side effect)
+// this removes all quantities when either creating an order or resetting application
+var removeQuantity = function removeQuantity(products) {
+  products.forEach(function (product) {
+    return delete product.quantity;
+  });
+};
+
+exports.removeQuantity = removeQuantity;
 
 /***/ })
 

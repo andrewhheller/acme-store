@@ -2,21 +2,44 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Nav = () => {
+const Nav = ({ cartCount, orderCount }) => {
 
   return (
     <ul>
 
-      <li>Home</li>
+      <Link to="/">
+        <li>Home</li>
+      </Link>
       
       <Link to='/cart'>
-        <li>Cart</li>
-        </Link>
+        <li>Cart ({ cartCount })</li>
+      </Link>
       
-      <li>Orders</li>
+      <Link to="/orders">
+        <li>Orders ({ orderCount })</li>
+      </Link>
+
     </ul>
   )
 
 }
 
-export default Nav;
+const cartCount = (cart) => {
+  return cart.reduce((count, product) => {
+    if(product.quantity) {
+      count += product.quantity
+    }
+    return count;
+  }, 0)
+}
+
+const mapStateToProps = ({ cart, orders }) => {
+ 
+  return {
+    cartCount: cartCount(cart),
+    orderCount: orders.length
+  }
+
+}
+
+export default connect(mapStateToProps)(Nav);

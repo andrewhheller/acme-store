@@ -1,8 +1,8 @@
 import axios from 'axios';
 
+
 // action constants
 const LOAD_PRODUCTS = 'LOAD_PRODUCTS';
-
 
 // action creators
 const _loadProducts = products => {
@@ -11,7 +11,6 @@ const _loadProducts = products => {
     products
   }
 }
-
 
 
 // thunks
@@ -34,7 +33,7 @@ const productsReducer = (state = [], action) => {
       state = action.products
   }
 
-  return state;
+  return state.sort((a, b) => a.name > b.name);
 }
 
 
