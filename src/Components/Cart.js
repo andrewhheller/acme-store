@@ -10,12 +10,14 @@ const Cart = ({ products, cart, onCreateOrder }) => {
   return (
     <div>
       <h1>Products</h1>
-      <ul>
+      <ul className='list-group'>
         {
           products.map(product => <CartLineItem key={product.id} product={product}/>)
         }
       </ul>
-      <button disabled={!cart.length} onClick={() => onCreateOrder(cart, products)}>Create Order</button>
+      <button className="btn btn-danger" disabled={!cart.length} onClick={() => onCreateOrder(cart, products)}>Create Order</button>
+      <br />
+      <br />
     </div>
   )
 

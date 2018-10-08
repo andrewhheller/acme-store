@@ -29574,6 +29574,113 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
+/***/ "./src/Components/AllOrders.js":
+/*!*************************************!*\
+  !*** ./src/Components/AllOrders.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _store = __webpack_require__(/*! ../store */ "./src/store.js");
+
+var _store2 = _interopRequireDefault(_store);
+
+var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
+
+var _Order = __webpack_require__(/*! ./Order */ "./src/Components/Order.js");
+
+var _Order2 = _interopRequireDefault(_Order);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AllOrders = function (_Component) {
+  _inherits(AllOrders, _Component);
+
+  function AllOrders() {
+    _classCallCheck(this, AllOrders);
+
+    return _possibleConstructorReturn(this, (AllOrders.__proto__ || Object.getPrototypeOf(AllOrders)).apply(this, arguments));
+  }
+
+  _createClass(AllOrders, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _store2.default.dispatch((0, _orders.getOrders)());
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          orders = _props.orders,
+          products = _props.products;
+
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'All Orders'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/orders' },
+          _react2.default.createElement(
+            'button',
+            { className: 'btn btn-success' },
+            'Current Orders'
+          )
+        ),
+        orders.map(function (order) {
+          return _react2.default.createElement(_Order2.default, { key: order.id, products: products, order: order });
+        })
+      );
+    }
+  }]);
+
+  return AllOrders;
+}(_react.Component);
+
+;
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var orders = _ref.orders,
+      products = _ref.products;
+
+  return {
+    orders: orders,
+    products: products
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(AllOrders);
+
+/***/ }),
+
 /***/ "./src/Components/App.js":
 /*!*******************************!*\
   !*** ./src/Components/App.js ***!
@@ -29618,6 +29725,10 @@ var _Orders = __webpack_require__(/*! ./Orders */ "./src/Components/Orders.js");
 
 var _Orders2 = _interopRequireDefault(_Orders);
 
+var _AllOrders = __webpack_require__(/*! ./AllOrders */ "./src/Components/AllOrders.js");
+
+var _AllOrders2 = _interopRequireDefault(_AllOrders);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29648,14 +29759,15 @@ var App = function (_Component) {
         null,
         _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(_Nav2.default, null),
-          _react2.default.createElement(_Header2.default, null),
+          { className: 'main' },
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Nav2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Header2.default }),
           _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
             _react2.default.createElement(_reactRouterDom.Route, { path: '/cart', component: _Cart2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/orders', component: _Orders2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/orders', component: _Orders2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/all-orders', component: _AllOrders2.default })
           )
         )
       );
@@ -29713,18 +29825,20 @@ var Cart = function Cart(_ref) {
     ),
     _react2.default.createElement(
       'ul',
-      null,
+      { className: 'list-group' },
       products.map(function (product) {
         return _react2.default.createElement(_CartLineItem2.default, { key: product.id, product: product });
       })
     ),
     _react2.default.createElement(
       'button',
-      { disabled: !cart.length, onClick: function onClick() {
+      { className: 'btn btn-danger', disabled: !cart.length, onClick: function onClick() {
           return onCreateOrder(cart, products);
         } },
       'Create Order'
-    )
+    ),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement('br', null)
   );
 };
 
@@ -29797,26 +29911,33 @@ var CartLineItem = function CartLineItem(_ref) {
 
   return _react2.default.createElement(
     'li',
-    null,
-    product.name,
-    _react2.default.createElement('br', null),
-    '(',
-    count(),
-    ') ordered',
-    _react2.default.createElement('br', null),
+    { className: 'list-group-item' },
     _react2.default.createElement(
-      'button',
-      { disabled: !count(), onClick: function onClick() {
-          return onRemoveProduct(product);
-        } },
-      '-'
+      'span',
+      { style: { fontWeight: "bold" } },
+      product.name
     ),
+    _react2.default.createElement('br', null),
+    count(),
+    ' ordered',
+    _react2.default.createElement('br', null),
     _react2.default.createElement(
-      'button',
-      { onClick: function onClick() {
-          return onAddProduct(product);
-        } },
-      '+'
+      'div',
+      { className: 'btn-group btn-group-sm' },
+      _react2.default.createElement(
+        'button',
+        { className: 'btn btn-primary', disabled: !count(), onClick: function onClick() {
+            return onRemoveProduct(product);
+          } },
+        '-'
+      ),
+      _react2.default.createElement(
+        'button',
+        { className: 'btn btn-primary', onClick: function onClick() {
+            return onAddProduct(product);
+          } },
+        '+'
+      )
     ),
     _react2.default.createElement('br', null),
     _react2.default.createElement('br', null)
@@ -29871,6 +29992,8 @@ var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-r
 
 var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
 
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Header = function Header(_ref) {
@@ -29881,20 +30004,26 @@ var Header = function Header(_ref) {
   return _react2.default.createElement(
     'div',
     null,
+    _react2.default.createElement('br', null),
     _react2.default.createElement(
-      'h3',
-      null,
-      '(',
-      totalSales,
-      ') Items Sold'
+      'div',
+      { className: 'alert alert-success', style: { width: "300px" } },
+      _react2.default.createElement(
+        'h5',
+        { className: 'alert-heading' },
+        totalSales,
+        ' Items Sold'
+      )
     ),
     _react2.default.createElement(
       'button',
-      { onClick: function onClick() {
+      { className: 'btn btn-warning', onClick: function onClick() {
           return onResetApp(products);
         } },
       'Reset'
-    )
+    ),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement('br', null)
   );
 };
 
@@ -29914,9 +30043,15 @@ var totalSales = function totalSales(orders) {
   }, 0);
 };
 
-var mapStateToProps = function mapStateToProps(_ref2) {
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
   var orders = _ref2.orders,
       products = _ref2.products;
+  var location = _ref3.location;
+
+
+  // if on orders or cart page, caclulate orders based only on CURRENT orders,
+  // if on all-orders page, caclulate orders based only on ALL orders,
+  orders = (0, _utils.toggleOrders)(orders, location);
 
   return {
     totalSales: totalSales(orders),
@@ -29958,6 +30093,8 @@ var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_module
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Nav = function Nav(_ref) {
@@ -29967,22 +30104,22 @@ var Nav = function Nav(_ref) {
 
   return _react2.default.createElement(
     'ul',
-    null,
+    { className: 'nav nav-tabs nav-fill' },
     _react2.default.createElement(
       _reactRouterDom.Link,
-      { to: '/' },
+      { className: 'nav-link', to: '/' },
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'nav-item active' },
         'Home'
       )
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
-      { to: '/cart' },
+      { className: 'nav-link', to: '/cart' },
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'nav-item' },
         'Cart (',
         cartCount,
         ')'
@@ -29990,10 +30127,10 @@ var Nav = function Nav(_ref) {
     ),
     _react2.default.createElement(
       _reactRouterDom.Link,
-      { to: '/orders' },
+      { className: 'nav-link', to: '/orders' },
       _react2.default.createElement(
         'li',
-        null,
+        { className: 'nav-item' },
         'Orders (',
         orderCount,
         ')'
@@ -30011,10 +30148,15 @@ var cartCount = function cartCount(cart) {
   }, 0);
 };
 
-var mapStateToProps = function mapStateToProps(_ref2) {
+var mapStateToProps = function mapStateToProps(_ref2, _ref3) {
   var cart = _ref2.cart,
       orders = _ref2.orders;
+  var location = _ref3.location;
 
+
+  // if on orders or cart page, caclulate orders based only on CURRENT orders,
+  // if on all-orders page, caclulate orders based only on ALL orders
+  orders = (0, _utils.toggleOrders)(orders, location);
 
   return {
     cartCount: cartCount(cart),
@@ -30054,32 +30196,35 @@ var Order = function Order(_ref) {
   var findProductName = function findProductName(products, id) {
     return products.find(function (product) {
       return product.id === id;
-    }).name;
+    }) ? products.find(function (product) {
+      return product.id === id;
+    }).name : '';
   };
 
   return _react2.default.createElement(
     'div',
     { key: order.id },
+    _react2.default.createElement('br', null),
+    _react2.default.createElement('br', null),
     _react2.default.createElement(
       'p',
-      null,
+      { style: { fontWeight: "bold", backgroundColor: "darkgray", width: "600px" } },
       '#',
       order.id
     ),
     order.lineItems.map(function (lineItem) {
       return _react2.default.createElement(
         'ul',
-        { key: lineItem.id },
+        { className: 'list-group', key: lineItem.id },
         _react2.default.createElement(
           'li',
-          null,
-          findProductName(products, lineItem.productId)
-        ),
-        _react2.default.createElement(
-          'li',
-          null,
-          'quantity: ',
-          lineItem.quantity
+          { className: 'list-group-item' },
+          findProductName(products, lineItem.productId),
+          _react2.default.createElement(
+            'span',
+            { className: 'alert alert-info', style: { marginLeft: "10px" } },
+            lineItem.quantity
+          )
         )
       );
     })
@@ -30110,6 +30255,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
 var _Order = __webpack_require__(/*! ./Order */ "./src/Components/Order.js");
 
 var _Order2 = _interopRequireDefault(_Order);
@@ -30129,6 +30278,15 @@ var Orders = function Orders(_ref) {
       null,
       'Current Orders'
     ),
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/all-orders' },
+      _react2.default.createElement(
+        'button',
+        { className: 'btn btn-success' },
+        'All Orders'
+      )
+    ),
     orders.map(function (order) {
       return _react2.default.createElement(_Order2.default, { key: order.id, products: products, order: order });
     })
@@ -30141,7 +30299,9 @@ var mapStateToProps = function mapStateToProps(_ref2) {
 
 
   return {
-    orders: orders,
+    orders: orders.filter(function (order) {
+      return _utils.recentOrders.includes(order.id);
+    }),
     products: products
   };
 };
@@ -30353,6 +30513,7 @@ var resetApp = function resetApp(products) {
   return function (dispatch) {
     dispatch(_resetApp());
     (0, _utils.removeQuantity)(products);
+    _utils.recentOrders.splice(0, _utils.recentOrders.length); // clear recentOrders array
   };
 };
 
@@ -30367,6 +30528,8 @@ var createOrder = function createOrder(cart, products) {
     .then(function (response) {
       return response.data;
     }).then(function (order) {
+
+      _utils.recentOrders.push(order.id);
 
       // for each product in cart
       cart.forEach(function (item) {
@@ -30585,7 +30748,22 @@ var removeQuantity = function removeQuantity(products) {
   });
 };
 
+var recentOrders = [];
+
+var toggleOrders = function toggleOrders(orders, location) {
+
+  if (location.pathname === '/orders' || location.pathname === '/cart') {
+    return orders.filter(function (order) {
+      return recentOrders.includes(order.id);
+    });
+  } else {
+    return orders;
+  }
+};
+
 exports.removeQuantity = removeQuantity;
+exports.recentOrders = recentOrders;
+exports.toggleOrders = toggleOrders;
 
 /***/ })
 

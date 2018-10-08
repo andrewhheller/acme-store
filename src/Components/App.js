@@ -8,6 +8,7 @@ import Nav from './Nav';
 import Header from './Header';
 import Cart from './Cart';
 import Orders from './Orders';
+import AllOrders from './AllOrders';
 
 
 class App extends Component {
@@ -19,12 +20,13 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Nav />
-          <Header />
+        <div className="main">
+        <Route path="/" component={Nav} />
+          <Route path="/" component={Header} />
           <Switch>
             <Route path="/cart" component={Cart} />
             <Route path="/orders" component={Orders} />
+            <Route path="/all-orders" component={AllOrders} />
           </Switch>
         </div>
       </Router>

@@ -3,13 +3,21 @@ import { connect } from 'react-redux';
 
 import { resetApp } from '../reducers/orders';
 
+import { recentOrders, toggleOrders } from '../utils';
+
+
 
 
 const Header = ({ products, totalSales, onResetApp }) => {
   return(
     <div>
-      <h3>({ totalSales }) Items Sold</h3>
-      <button onClick={() => onResetApp(products)} >Reset</button>
+      <br />
+      <div className="alert alert-success" style={{ width: "300px" }}>
+        <h5 className="alert-heading">{ totalSales } Items Sold</h5>
+      </div>
+      <button className="btn btn-warning" onClick={() => onResetApp(products)} >Reset</button>
+      <br />
+      <br />
     </div>
   )
 }
@@ -29,7 +37,12 @@ const totalSales = orders => {
 
 }
 
-const mapStateToProps = ({ orders, products }) => {
+const mapStateToProps = ({ orders, products }, { location } ) => {
+
+  // if on orders or cart page, caclulate orders based only on CURRENT orders,
+  // if on all-orders page, caclulate orders based only on ALL orders,
+  orders = toggleOrders(orders, location)
+
   return {
     totalSales: totalSales(orders),
     products

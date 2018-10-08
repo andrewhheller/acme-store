@@ -12,13 +12,15 @@ const CartLineItem = ({ cart, product, onAddProduct, onRemoveProduct }) => {
   }
 
     return (
-      <li>
-        {product.name}
+      <li className="list-group-item">
+        <span style={{ fontWeight: "bold" }}>{product.name}</span>
         <br />
-        ({count()}) ordered
+        {count()} ordered
         <br />
-        <button disabled={!count()} onClick={() => onRemoveProduct(product)}>-</button>
-        <button onClick={() => onAddProduct(product)}>+</button>
+        <div className="btn-group btn-group-sm">
+          <button className="btn btn-primary" disabled={!count()} onClick={() => onRemoveProduct(product)}>-</button>
+          <button className="btn btn-primary" onClick={() => onAddProduct(product)}>+</button>
+        </div>
         <br />
         <br />
       </li>

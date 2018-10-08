@@ -10,7 +10,6 @@ LineItem.belongsTo(Order);
 
 Order.hasMany(LineItem);
 
-
 // sync and seed
 const syncAndSeed = () => {
   let widget1, widget2, widget3;

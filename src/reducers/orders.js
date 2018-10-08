@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { removeQuantity } from '../utils';
+import { removeQuantity, recentOrders } from '../utils';
 
 import { _clearCart } from './cart';
 
@@ -37,6 +37,7 @@ const resetApp = (products) => {
   return (dispatch) => {
     dispatch(_resetApp())
     removeQuantity(products);
+    recentOrders.splice(0, recentOrders.length) // clear recentOrders array
   }
 }
 
@@ -55,6 +56,8 @@ const createOrder = (cart, products) => {
       .then(response => response.data)
       
       .then(order => {
+
+        recentOrders.push(order.id);
 
         // for each product in cart
         cart.forEach(item => {

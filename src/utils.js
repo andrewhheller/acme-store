@@ -7,7 +7,22 @@ const removeQuantity = products => {
   products.forEach(product => delete product.quantity)
 }
 
+const recentOrders = [];
+
+const toggleOrders = (orders, location) => {
+  
+  if(location.pathname === '/orders' || location.pathname === '/cart') {
+    return orders.filter(order => recentOrders.includes(order.id))
+  }
+  else {
+    return orders
+  }
+
+}
+
 
 export {
-  removeQuantity
+  removeQuantity,
+  recentOrders,
+  toggleOrders
 }
