@@ -7,15 +7,15 @@ const { Order, LineItem } = require('../db').models;
 
 router.get('/', async (req, res, next) => {
   
-  const attr = {
-    status: 'CART'
-  }
+  // const attr = {
+  //   status: 'CART'
+  // }
 
   try {
-    let cart = await Order.findOne({ where: attr })
-    if(!cart) {
-      cart = await Order.create(attr)
-    }
+    // let cart = await Order.findOne({ where: attr })
+    // if(!cart) {
+    //   cart = await Order.create(attr)
+    // }
     const orders = await Order.findAll({
       include: [ LineItem ],
       order: [ [ 'createdAt', 'DESC' ] ]
