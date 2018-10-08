@@ -30583,7 +30583,9 @@ var orderReducer = function orderReducer() {
       break;
   }
 
-  return state;
+  return state.sort(function (a, b) {
+    return a.name > b.name;
+  });
 };
 
 exports.orderReducer = orderReducer;

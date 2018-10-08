@@ -104,7 +104,7 @@ const orderReducer = (state = [], action) => {
       break;
   }
 
-  return state;
+  return state.sort((a, b) => a.name > b.name);
 }
 
 
