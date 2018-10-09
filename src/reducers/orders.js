@@ -26,7 +26,7 @@ const _resetApp = () => {
 // thunks
 const getOrders = () => {
   return (dispatch) => {
-     axios.get('/api/orders')
+     return axios.get('/api/orders')
       .then(response => response.data)
       .then(orders => dispatch(_getOrders(orders)))
       .catch(error => console.log(error))
@@ -67,16 +67,12 @@ const createOrder = (cart, products) => {
           const lineItem = { productId: item.id, quantity: item.quantity }
 
           // POST object to lineItems table
-          axios.post(`/api/orders/${order.id}/lineItems/`, lineItem)
+          return axios.post(`/api/orders/${order.id}/lineItems/`, lineItem)
         })
 
       })
 
-      // get all orders from the DB
-      .then(() => dispatch(getOrders()))
-
       // reload products to wipe out quantity key (UGH)
-      // .then(() => dispatch(loadProducts()))
       .then(() => removeQuantity(products))
 
       // clear the cart
@@ -104,7 +100,7 @@ const orderReducer = (state = [], action) => {
       break;
   }
 
-  return state.sort((a, b) => a.name > b.name);
+  return state;
 }
 
 

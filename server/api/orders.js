@@ -20,6 +20,7 @@ router.get('/', async (req, res, next) => {
       include: [ LineItem ],
       order: [ [ 'createdAt', 'DESC' ] ]
     })
+    // console.log(orders)
     res.send(orders)
   }
   catch (error) {

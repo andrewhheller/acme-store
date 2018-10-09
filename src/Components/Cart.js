@@ -1,9 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { removeQuantity } from '../utils';
+
 import CartLineItem from './CartLineItem';
 
-import { createOrder } from '../reducers/orders';
+import { createOrder, getOrders } from '../reducers/orders';
+import { _clearCart } from '../reducers/cart';
 
 const Cart = ({ products, cart, onCreateOrder }) => {
 
@@ -36,8 +39,8 @@ const mapDispatchToProps = (dispatch, { history }) => {
 
   return {
     onCreateOrder: (cart, products) => {
-      dispatch(createOrder(cart, products))
-        .then(() => history.push('/orders'))
+      dispatch(createOrder(cart, products)) // post orders to DB
+        .then(() => history.push('/orders')) // redirect to /orders
     }
   }
 }

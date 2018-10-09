@@ -1,32 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { recentOrders } from '../utils';
 
+import store from '../store';
+import { getOrders } from '../reducers/orders';
+
 import Order from './Order';
 
 
 
-const Orders = ({ orders, products }) => {
+class Orders extends Component {
 
-  return (
-    <div>
-      <h1>Current Orders</h1>
+  componentDidMount() {
+    store.dispatch(getOrders())
+  }
 
-      <Link to="/all-orders">
-        <button className="btn btn-success">All Orders</button>
-      </Link>
+  render() {
+    const { orders, products } = this.props;
 
-      {
-        orders.map(order => {
-          return (
-            <Order key={order.id} products={products} order={order}/>
-          )
-        })
-      }
-    </div>
-  )
+    return (
+      <div>
+        <h1>Current Orders</h1>
+
+        <Link to="/all-orders">
+          <button className="btn btn-success">All Orders</button>
+        </Link>
+
+        {
+          orders.map(order => {
+            return (
+              <Order key={order.id} products={products} order={order}/>
+            )
+          })
+        }
+      </div>
+    )
+  }
 
 }
 

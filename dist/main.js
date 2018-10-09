@@ -29801,11 +29801,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
+var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
+
 var _CartLineItem = __webpack_require__(/*! ./CartLineItem */ "./src/Components/CartLineItem.js");
 
 var _CartLineItem2 = _interopRequireDefault(_CartLineItem);
 
 var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
+
+var _cart = __webpack_require__(/*! ../reducers/cart */ "./src/reducers/cart.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29859,9 +29863,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref3) {
 
   return {
     onCreateOrder: function onCreateOrder(cart, products) {
-      dispatch((0, _orders.createOrder)(cart, products)).then(function () {
+      dispatch((0, _orders.createOrder)(cart, products)) // post orders to DB
+      .then(function () {
         return history.push('/orders');
-      });
+      }); // redirect to /orders
     }
   };
 };
@@ -30249,6 +30254,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
@@ -30259,43 +30266,76 @@ var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_module
 
 var _utils = __webpack_require__(/*! ../utils */ "./src/utils.js");
 
+var _store = __webpack_require__(/*! ../store */ "./src/store.js");
+
+var _store2 = _interopRequireDefault(_store);
+
+var _orders = __webpack_require__(/*! ../reducers/orders */ "./src/reducers/orders.js");
+
 var _Order = __webpack_require__(/*! ./Order */ "./src/Components/Order.js");
 
 var _Order2 = _interopRequireDefault(_Order);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Orders = function Orders(_ref) {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Orders = function (_Component) {
+  _inherits(Orders, _Component);
+
+  function Orders() {
+    _classCallCheck(this, Orders);
+
+    return _possibleConstructorReturn(this, (Orders.__proto__ || Object.getPrototypeOf(Orders)).apply(this, arguments));
+  }
+
+  _createClass(Orders, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      _store2.default.dispatch((0, _orders.getOrders)());
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          orders = _props.orders,
+          products = _props.products;
+
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Current Orders'
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/all-orders' },
+          _react2.default.createElement(
+            'button',
+            { className: 'btn btn-success' },
+            'All Orders'
+          )
+        ),
+        orders.map(function (order) {
+          return _react2.default.createElement(_Order2.default, { key: order.id, products: products, order: order });
+        })
+      );
+    }
+  }]);
+
+  return Orders;
+}(_react.Component);
+
+var mapStateToProps = function mapStateToProps(_ref) {
   var orders = _ref.orders,
       products = _ref.products;
-
-
-  return _react2.default.createElement(
-    'div',
-    null,
-    _react2.default.createElement(
-      'h1',
-      null,
-      'Current Orders'
-    ),
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/all-orders' },
-      _react2.default.createElement(
-        'button',
-        { className: 'btn btn-success' },
-        'All Orders'
-      )
-    ),
-    orders.map(function (order) {
-      return _react2.default.createElement(_Order2.default, { key: order.id, products: products, order: order });
-    })
-  );
-};
-
-var mapStateToProps = function mapStateToProps(_ref2) {
-  var orders = _ref2.orders,
-      products = _ref2.products;
 
 
   return {
@@ -30499,7 +30539,7 @@ var _resetApp = function _resetApp() {
 // thunks
 var getOrders = function getOrders() {
   return function (dispatch) {
-    _axios2.default.get('/api/orders').then(function (response) {
+    return _axios2.default.get('/api/orders').then(function (response) {
       return response.data;
     }).then(function (orders) {
       return dispatch(_getOrders(orders));
@@ -30539,17 +30579,11 @@ var createOrder = function createOrder(cart, products) {
         var lineItem = { productId: item.id, quantity: item.quantity
 
           // POST object to lineItems table
-        };_axios2.default.post('/api/orders/' + order.id + '/lineItems/', lineItem);
+        };return _axios2.default.post('/api/orders/' + order.id + '/lineItems/', lineItem);
       });
     })
 
-    // get all orders from the DB
-    .then(function () {
-      return dispatch(getOrders());
-    })
-
     // reload products to wipe out quantity key (UGH)
-    // .then(() => dispatch(loadProducts()))
     .then(function () {
       return (0, _utils.removeQuantity)(products);
     })
@@ -30583,9 +30617,7 @@ var orderReducer = function orderReducer() {
       break;
   }
 
-  return state.sort(function (a, b) {
-    return a.name > b.name;
-  });
+  return state;
 };
 
 exports.orderReducer = orderReducer;
